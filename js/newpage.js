@@ -18,3 +18,10 @@ function openpage(num){
 // function open(){
 //   window.location.href = "https://thisis.host";
 // }
+
+//滚轮横向滚动
+let mainScr = document.querySelector('#main');
+mainScr.addEventListener('wheel',function(event){
+  event.preventDefault();
+  mainScr.scrollLeft += event.deltaY;
+})
