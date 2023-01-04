@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3849689_fg4xm6d4bmj.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="header">
+    Hclass Launcher
+    <div id="buttonBox_Header">
+      <button class="button_Header" id="fullScreen"  onclick="handleFullScreen()"><i class="iconfont icon-quanping"></i></button>
+      <button class="button_Header" id="disFullScreen"  onclick="fixerEFS(),exitFullscreen()"><i class="iconfont icon-quanping"></i></button>
+      <button class="button_Header"><i class="iconfont icon-shezhi"></i></button>
+      <button class="button_Header"><i class="iconfont icon-call"></i></button>
+    </div>
+  </div>
+  <div id="main">
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-zhinanzhen"></i>野生技协导航
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          野生技协导航（thisis.host），并合并野生技协系列小站点（高考倒计时、一键PPT、高考综合各科分数计算等）。
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(0)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-zhuanpanjieguo"></i>随机叫人
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          这是一个随机数生成器，您可以通过这个方式随机抽取学生的学号来回答问题
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(1)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-a-ziyuan605"></i>高考计时工具
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          三个年级的高考计时工具都有了
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(2)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-shijian"></i>北京时间显示
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          显示北京时间，用于考试、自习或者自己学习以及其他需要时间的场合
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(3)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-stopwatch"></i>秒表&计时器
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          还没有写好
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(4)">
+            no跳转
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-diannao"></i>展示屏幕
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          这是一个展示界面，您可以在班会课或上课时使用它来代替PPT
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(5)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-wenjian"></i>投票系统
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          这是一个简单的投票系统，您可以使用它来替代在黑板上画正字
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(6)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-rili"></i>一九班历
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          这是一个为班级开发的有许多有用功能和摸鱼功能的时钟和日历工具
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(7)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-xiqingfenweilihuayanhua"></i>2023贺岁
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          这是一个2023年将至的新年贺岁木鱼程序OnWoodFish
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(8)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="title_Card">
+        <i class="iconfont icon-guanyu"></i>关于和日志
+      </div>
+      <div class="footer_Card">
+        <div class="text_Card">
+          在这里您可以看到一些关于本软件的事情和Hclass的更新日志
+        </div>
+        <div class="buttonBox_Card">
+          <button class="button_Card" onclick="openpage(9)">
+            跳转
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="footer">
+    <div id="verson">
+      develper:TengKongTec<br />
+      verson:testing
+    </div>
+    <div id="jx">
+      野生技协合作：方块茶话会 音幻宝中 朗诵社 排球社 合唱团 街舞社 汉服社 航模社 民乐社 <br />
+      心理社 书画社 动漫社 舞蹈队 日语社 Instreet社 机器人社 推理社 篮裁社 魔术社 冒险家协会
+    </div>
+  </div>
+  <script src="./js/newpage.js"></script>
+  <script src="./js/fullScreen.js"></script>
+</body>
+
+</html>

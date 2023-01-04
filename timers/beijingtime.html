@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main {
+            margin: 0px;
+            padding: 0px;
+            border:none;
+            outline: none;
+            height: 300;
+            width: 100%;
+            font-size: 12vw;
+            transition: .3s;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: rgb(255, 47, 47);
+        }
+        .buttonBox{
+            height: auto;width: auto;
+            position: absolute;
+            top: 15px;left: 15px;
+        }
+		@media screen and (max-width:700px){
+			.main{
+				font-size: 80px;
+			}
+		}
+    </style>
+    <title>北京时间显示</title>
+</head>
+
+<body>
+    <div class="buttonBox">
+        <button class="headerButton" id="fullScreen"  onclick="handleFullScreen()">
+            全屏
+        </button>
+        <button class="headerButton" id="disFullScreen"  onclick="fixerEFS(),exitFullscreen()">
+            退出
+        </button>
+    </div>
+    <input class="main" id="txt">
+    </div>
+    <script src="../js/fullScreen.js"></script>
+    <script>
+        document.getElementById("txt").value = "LoadingTime";
+        function time() {
+
+            var date = new Date();
+
+            var hours = date.getHours();          //小时 ,返回 Date 对象的小时 (0 ~ 23)
+            var minutes = date.getMinutes();      //分钟 ,返回 Date 对象的分钟 (0 ~ 59)
+            var seconds = date.getSeconds();      //秒 ,返回 Date 对象的秒数 (0 ~ 59)   
+
+            //修改小时格式
+            if (hours >= 0 && hours <= 9) {
+                hours = "0" + hours;
+            }
+
+            //修改分钟格式
+            if (minutes >= 0 && minutes <= 9) {
+                minutes = "0" + minutes;
+            }
+
+            //修改秒格式
+            if (seconds >= 0 && seconds <= 9) {
+                seconds = "0" + seconds;
+            }
+
+            //获取当前系统时间  格式(yyyy-mm-dd hh:mm:ss)
+            var currentFormatDate = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("txt").value = currentFormatDate;
+        }
+        setInterval("time()","1000");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+html,body{
+    /* filter: grayscale(100%);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+}
+header{
+    margin: 0px;
+    background-color: rgb(255, 170, 170);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(255, 71, 71);
+}
+#back{
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: rgb(255, 61, 61);
+    color: white;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    position: absolute;
+    left: 50px;top: 30px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#output{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    background-color: rgb(255, 126, 126);
+    color:white;
+    /* font-weight: bold; */
+    margin-top: 30px;
+    font-size: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+}
+.numberInput{
+    height: 35px;
+    width: 300px;
+    border:1px red solid;
+    border-radius: 5px;
+    outline:none;
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+}
+#min{
+    margin-top: 30px;
+}
+#build{
+    height: 50px;
+    width: 300px;
+    font-size: 30px;
+    color:white;
+    background-color: rgb(255, 51, 51);
+    color:white;
+    font-weight: bold;
+    border-radius: 5px;
+    border:none;
+}
+#build:hover{
+    animation: buildChange 0.1s forwards;
+}
+@keyframes buildChange{
+    to{
+        height: 55px;
+        width: 305px;
+    }
+}
+#build:active{
+    animation: buildActiveChange 0.1s forwards;
+}
+@keyframes buildActiveChange{
+    to{
+        height: 45px;
+        width: 295px;
+        background-color: rgb(160, 255, 141);
+        color:black;
+    }
+}
+.inButtonText{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    height: 100%; width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

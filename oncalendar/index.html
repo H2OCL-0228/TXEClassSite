@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Document</title>
+</head>
+<body onload="bodyOnload()">
+
+    <!-- 打开右侧侧边栏的按钮 -->
+    <button class="openRightSideBarButton" id="openRightSideBarButton" onclick="openOrCloseRight()">
+        <img src="./pictures/rightSideBarButtonSVG.svg" style="height: 50%;width: auto;">
+    </button>
+
+
+    <!-- 右侧侧边栏 -->
+    <div class="rightSideBar" id = "rightSideBar">
+        <div class="inRight" id="inRight">
+            <button class="inRightButton" id="homework" onclick="addHomework()">
+                <img src="./pictures/homeWork.svg" class = "inRightImg">
+                <p class="inRightP">布置作业</p>
+            </button>
+            <button class="inRightButton" id="notice">
+                <img src="./pictures/doanotice.svg" class="inRightImg" style="height: 57%;width: auto;">
+                <p class="inRightP">发布通知</p>
+            </button>
+            <button class="inRightButton" id="focus" onclick="showFocus()">
+                <img src="./pictures/focus.svg" class="inRightImg" style="height: 60%;width: auto;border:1px white solid;border-radius: 5px;padding: 5px;">
+                <p class="inRightP">焦点模式</p>
+            </button>
+        </div>
+        <button class="about" id="about" onclick="openModal('modalAbout')">
+            关于
+        </button>
+    </div>
+
+
+    <!-- 设置 -->
+    <div class="modalBox" id="modalSettings">
+        <button class="buttonWidthSameAsHeight" id="buttonCloseModal" onclick="closeModal('modalSettings')">
+            <img src="./pictures/guanbi.svg" class="inWsahButtonImg">
+        </button>
+        <div class="modalTitle" id="settingsTitle">
+            <img src="./pictures/logodaizi.png" id="modalImg">
+        </div>
+        <div class="modalMain" id="settingsMain">
+            <h2  style="text-align:center;padding: 0;padding-bottom:10px;margin: 0;margin-bottom: 15px;border-bottom: 1px rgb(55,55,55) solid;">一九班历设置</h2>
+            <div id="setTitle"> 颜色主题</div>
+            <div id="setAction">
+                <button class="color" id = "red" onclick="color('#ff5050')"></button>
+                <button class="color" id = "yellow" onclick="color('#eed045')"></button>
+                <button class="color" id = "green" onclick="color('#5dbe8a')"></button>
+                <button class="color" id = "blue" onclick="color('#2f90b9')"></button>
+                <button class="color" id = "white" onclick="color('#ffffff')"></button>
+            </div> 
+            <div id="setTitle">显示模式</div>
+            <div id="setAction">
+                <button class="showFunc" id="normal" onclick="showSmallNormal(),showNormal()">
+                    <img src="./pictures/normal.svg" style="height: 90%;width: auto;">
+                </button>
+                <button class="showFunc" id="focus" onclick="showFocus(),showSmallFocus()">
+                    <img src="./pictures/focus.svg" style="height: 100%;width: auto;">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 关于 -->
+    <div class="modalBox" id="modalAbout">
+        <button class="buttonWidthSameAsHeight" id="buttonCloseModal" onclick="closeModal('modalAbout')">
+            <img src="./pictures/guanbi.svg" class="inWsahButtonImg">
+        </button>
+        <div class="modalTitle" id="settingsTitle">
+            <img src="./pictures/logodaizi.png" id="modalImg">
+        </div>
+        <div class="modalMain" id="aboutMain">
+            <div id="verson">
+                内测版v1.0 || Verson1.0
+            </div>
+            <div id="aboutAdd">
+                一九班历第一个版本正式上线
+            </div>
+            <div id="aboutFix">
+                修复了课程表和星期显示无法显示周日的问题
+            </div>
+            <div id="aboutChange">
+                更多功能敬请期待！<br>
+                内测版网址：HclassHelper.github.io
+            </div>
+            <div id="verson">
+                正式版v1.2 || Verson1.2
+            </div>
+            <div id="aboutAdd">
+                1、加入了OnCalender侧边栏<br>
+                2、完成了布置作业功能<br>
+            </div>
+            <div id="verson">
+                正式版v1.2.1 || Verson1.2.1
+            </div>
+            <div id="aboutAdd">
+                1、加入了颜色主题设置<br>
+                2、加入了焦点模式显示
+            </div>
+            <div id="verson">正式版v1.2.2 || Verson1.2.2</div>
+            <div id="aboutFix">
+                1、紧急修复了由于吃饭时间计算函数错误导致一系列后置常加载函数瘫痪的问题
+            </div>
+            <div id="aboutChange">
+                1、页面细节优化
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 通知气泡 -->
+    <div class="noticeBox" id="noticeBox">
+        
+    </div>
+
+    <div class="sidebar" id="sidebar">
+    <div class="sidebarMain" id="sidebarMain">
+            <!-- 顶部星期和日期 -->
+            <div class="dateBox" id="dateBox">            
+                <div class="weekDay" id="weekDay"></div>
+                <div class="month" id="month"></div>
+            </div>
+
+            <!-- 课程表、姓名框和其他 -->
+            <div class="sidebarBoxTwo" id="sidebarBoxTwo">
+
+                <!-- 课程表 -->
+                <div class="classList" id="classList"></div>
+
+                <!-- 姓名框 -->
+                <div class="sidebarBoxThree" id="sidebarBoxThree">
+                    <div class="sidebarNameBox" id="cleanStudent">
+                        <div class="sidebarNameBoxTitle" id="cleanStudentTitle">
+                            今日值日生
+                        </div>
+                        <div class="sidebarNameBoxMain" id="cleanStudentMain">
+                            <button onclick="addCleanStudent()">添加</button>
+                        </div>
+                    </div>
+                    <div class="sidebarNameBox" id="cleanBlackboardStudent">
+                        <div class="sidebarNameBoxTitle" id="cleanBlackboardStudentTitle">
+                            今日擦黑板
+                        </div>
+                        <div class="sidebarNameBoxMain" id="cleanBlackboardStudentMain">
+                            <button onclick = "addCleanBlackboardStudent()">添加</button>
+                        </div>
+                    </div>
+                    <div class="sidebarNameBox" id="toEatBox">
+                        <div class="sidebarNameBoxTitle" id="toEatTitle">
+                            下次吃饭
+                        </div>
+                        <div class="sidebarNameBoxMain" id="toEatMain">
+
+                        </div>
+                    </div>
+					<!-- 响应式小屏幕提醒 -->
+					<div class="sidebarNameBox" id="smallScreen">
+					    <div class="sidebarNameBoxMain" id="smallScreenMain" style="font-size: 20px;color:rgb(70,70,70);">
+								小屏功能不完善，请使用大屏
+					    </div>
+					</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="sidebarFooter" id="sidebarFooter">
+            <button class="buttonWidthSameAsHeight" id="fullScreen" onclick="handleFullScreen(),addFontFullScreen()">
+                <img src="./pictures/quanping.svg" class="inWsahButtonImg">
+            </button>            
+            <button class="buttonWidthSameAsHeight" id="disFullScreen" onclick="fixerEFS(),exitFullScreen(),disAddFontFullScreen()">
+                <img src="./pictures/quanping.svg" class="inWsahButtonImg">
+            </button>
+            <button class="buttonWidthSameAsHeight" id="footerButton" onclick="openModal('modalSettings')">
+                <img src="./pictures/settings.svg"  class="inWsahButtonImg">
+            </button>
+            <button class="buttonWidthSameAsHeight" id="footerButton">
+                <img src="./pictures/24gf-headset.svg"  class="inWsahButtonImg">
+            </button>
+            <div id="banBen">
+               Main Ver1.2.2
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 布置作业框 -->
+    <div id="homeworks">
+
+    </div>
+
+    <div class="timeBox" id="timeBox"></div>
+    <div class="simplePoetry" id="simplePoetry" onclick="oneSay()"></div>
+    <div class="banQuan" id="banQuan">
+        开发：TengKong@野生技协<br>
+        野生技协合作：方块茶话会 音幻宝中 朗诵社 排球社 合唱团 街舞社 汉服社 航模社 民乐社 <br>心理社 书画社 动漫社 舞蹈队 日语社 Instreet社 机器人社 推理社 篮裁社 魔术社 冒险家协会<br>
+    </div>
+    <script src="./js/index.js"></script>
+    <script src="./js/fullScreen.js"></script>
+    <script src="./js/temp.js"></script>
+    <script src="./js/rightSidebar.js"></script>
+    <script src="./js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 238, 238);
+        }
+        .header{
+            font-size: 50px;
+            font-weight: bold;
+            color:rgb(255, 79, 79);
+            margin: 0px;
+            padding: 0px;
+        }
+        .output{
+            font-size: 70px;
+            font-weight: bold;
+            color:black;
+        }
+        .main{
+            position: relative;
+            top:-50px;
+            height: auto;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .top{
+            position: absolute;
+            top: 0px;
+            height: 20px;
+            width: 100%;
+            margin: 0px;
+            margin-top: 10px;
+            padding: 0px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: row;
+        }
+        .inTop{
+            margin: 0px;
+            padding: 0px;
+        }
+        .chooseGrade{
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttonBox{
+            height: auto;width: auto;
+            position: absolute;bottom: 15px;left: 15px;
+        }
+		@media screen and (max-width:800px) {
+			.header{
+				font-size: 25px;
+			}
+			.output{
+				font-size: 30px;
+			}
+		}
+    </style></title>
+</head>
+<body>
+    <div class="buttonBox">
+        <button class="headerButton" id="fullScreen"  onclick="handleFullScreen()">
+            全屏
+        </button>
+        <button class="headerButton" id="disFullScreen"  onclick="fixerEFS(),exitFullscreen()">
+            退出
+        </button>
+    </div>
+    <div class="top">
+        <p class="inTop">年级:</p>
+        <button class="chooseGrade" onclick = "show('1'),unSee()" id = "but">高一年级</button>
+        <button class="chooseGrade" onclick = "show('2'),unSee()" id = "but1">高二年级</button>
+        <button class="chooseGrade" onclick = "show('3'),unSee()" id = "but2">高三年级</button>
+        <button class="chooseGrade" onclick = "history.go()">重新选择</button>
+    </div>
+    <div class="main">
+        <p class="header">
+            距离高考还有:
+        </p>
+        <div class="output" id="output">
+
+        </div>
+    </div>
+    <script src="../js/fullScreen.js"></script>
+    <script>
+            function show(grade) {
+                if(grade === "1"){
+                    var myyear = 2025;
+                }else if(grade === "2"){
+                    var myyear = 2024;
+                }else if(grade === "3"){
+                    var myyear = 2023;
+                };
+                //获取目的日期（你可以通过更改此处数值来改变目标时间）
+                var mymonth = 6;
+                var myday = 7;
+                var myhour = 6;
+                var myminute = 00;
+                var mysecond = 00;
+                var time = Number(new Date(myyear, mymonth, myday, myhour, myminute, mysecond));
+                // var time=new Date(myyear,mymonth,myday,myhour,myminute,mysecond).getTime();
+                //获取当前时间
+                // var nowTime = Date.now();
+                var nowTime=new Date().getTime();
+                    //获取时间差
+                var timediff = Math.round((time - nowTime) / 1000);
+                //获取还剩多少天
+                var day = parseInt(timediff / 3600 / 24 - 29);//此处由于不知原因导致时间误差，减去29进行纠正
+                    //获取还剩多少小时
+                var hour = parseInt(timediff / 3600 % 24);
+                //获取还剩多少分钟
+                var minute = parseInt(timediff / 60 % 60);
+                //获取还剩多少秒
+                var second = timediff % 60;
+                //输出还剩多少时间
+                document.getElementById("output").innerText = day + "天" + hour + "小时" + minute + "分钟" + second + "秒"; 
+                var intervals = setInterval(function(){show(grade)}, 1000);
+                if (timediff == 0) { return; }
+            }
+           function unSee(){
+               document.getElementById("but").style.display = "none";
+               document.getElementById("but1").style.display = "none";
+               document.getElementById("but2").style.display = "none";
+           }
+    </script>
+</body>
+</html>

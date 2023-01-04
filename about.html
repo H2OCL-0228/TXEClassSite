@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,body{
+            /* filter: grayscale(100%);
+            filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); */
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+            overflow-y: hidden;
+        }
+        header{
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            font-weight: bold;
+            background-color: rgb(255, 155, 155);
+            color: rgb(255, 255, 255);
+        }
+        main{
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dateBox{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            height: auto;
+            width: 95%;
+            background-color: rgb(255, 217, 217);
+            display: flex;
+            flex-shrink: 0px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dateHeader{
+            height: 30px;
+            width: auto;
+            font-size: 25px;
+            color:black;
+        }
+        .added{
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            width: 85%;
+            background-color: rgb(228, 255, 187);
+            color:black;
+        }
+        .fixed{
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            width: 85%;
+            background-color: rgb(255, 121, 121);
+            color:black;
+        }
+        .better{
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            width: 85%;
+            background-color: rgb(138, 208, 255);
+            color:black;
+        }
+        h3{
+            margin: 0px;
+        }
+        .inMainBox{
+            height: 700px;
+            width: 90%;
+            padding-top: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+			      padding-bottom: 20px;
+            overflow-y: auto;
+			      display: flex;
+			      flex-direction: column;
+			      align-items: center;
+        }
+        ::-webkit-scrollbar{
+            width: 7px;
+            background-color: rgba(240, 248, 255, 0);
+        }
+        ::-webkit-scrollbar-thumb{
+            width: 10px;
+            border-radius: 7px;
+            background-color: rgba(255, 70, 70, 0.5);
+        }
+		@media screen and (max-width:600px){
+			header{
+				font-size: 50px;
+			}
+			.dateHeader{
+				font-size: 20px;
+			}
+		}
+    </style>
+    <title>关于</title>
+</head>
+<body>
+    <header>
+        关于
+    </header>
+    <main>
+        <div class="inMainBox">
+            <div class="dateBox" id="shengMing">
+                <div class="dateHeader">
+                    声明
+                </div>
+                <div class="better">
+                    <h3>开发：腾空@野生技协</h3>
+                    <h3>本web应用原作者：2025级九班张腾立</h3>
+                    <h3 style="color:red">未经授权，严禁盗用源代码</h3>
+                    Hclass是一个大屏教学辅助软件，本意仅为方便课堂教学和使教学更丰富多彩。您当前使用的是
+                    开发版，可能存在bug或不稳定现象，加载速度较慢，请您谅解。如有需要，您可以使用正式版：
+                    hclass.thisis.host您可以使用Launcher来启动Hclass的系列应用，也可以通过提供的开发者
+                    工具来增添您自己的应用到Launcher方便您的使用。
+                </div>
+            </div>
+            <div class="dateBox" id="betav20220317a">
+                <div class="dateHeader">
+                    2022年3月17日——Betav20220317a
+                </div>
+                <div class="added">
+                    <h3>添加</h3>
+                    1、Hclass正式完成第一部分的开发，测试版上线<br>
+                    2、当前功能：随机数生成器、北京时间显示、中考倒计时、展示屏幕等<br>
+                </div>
+                <div class="fixed">
+                    <h3>修复</h3>
+                    修复了前期内测版中的一些已知的问题
+                </div>
+            </div>
+            <div class="dateBox" id="betav20220318a">
+                <div class="dateHeader">
+                    2022年3月18日——Betav20220318a
+                </div>
+                <div class="added">
+                    <h3>添加</h3>
+                    1、添加了投票系统
+                </div>
+                <div class="better">
+                    <h3>咕咕咕</h3>
+                    1、简约通知咕了，改成了投票系统，将来一定会加回来的（划掉
+                </div>
+                <div class="fixed">
+                    <h3>修复</h3>
+                    1、修复了随机叫人功能中的返回按钮会第二次打开启动器的问题
+                </div>
+            </div>
+            <div class="dateBox" id="verson1">
+                <div class="dateHeader">
+                    正式版 Verson1.0
+                </div>
+                <div class="added">
+                    <h3>下载</h3>
+                    正式版Verson1.0正式发布，您可以暂时添加QQ群849145557来获取下载链接
+                </div>
+            </div>
+            <div class="dateBox" id="betav20220323a">
+                <div class="dateHeader">2022年3月23日——Betav20220323a</div>
+                <div class="fixed">
+                    <h3>修复</h3>
+                    1、修复了中考倒计时全屏不居中的问题<br>
+                    2、修复了投票系统标题不正确的问题
+                </div>
+                <div class="added">
+                    <h3>添加</h3>
+                    1、添加了临时的疫情防控播报应用
+                </div>
+            </div>
+            <div class="dateBox" id="betav20220324a">
+                <div class="dateHeader">2022年3月24日——Betav20220324a</div>
+                <div class="added">
+                    <h3>上线</h3>
+                    1、Hclass开发者工具箱正式上线方便开发者使用
+                </div>
+                <div class="fixed">
+                    <h3>修复</h3>
+                    1、修复了随机叫人功能中输入框没有提示的问题
+                </div>
+                <div class="better">
+                    <h3>改进</h3>
+                    1、关于界面改名为关于和日志
+                </div>
+            </div>
+            <div class="dateBox" id="jx-beta1">
+                <div class="dateHeader">2022年8月30日——jx-Betav1.0</div>
+                <div class="added">
+                    <h3>上线</h3>
+                    1、我上宝中啦！加入了野生技协，所以版本号改为了jxbeta<br>
+                    2、加入了技协开发的考试时钟跳转窗口<br>
+                    3、中考倒计时改为了高考倒计时，并加入了年级选择功能
+                </div>
+                <div class="fixed">
+                    <h3>修复</h3>
+                    1、修复了一些已知问题<br>
+                    2、修复了投票系统都快一年了还是"元旦活动定制版"的问题
+                </div>
+                <div class="better">
+                    <h3>未来</h3>
+                    1、真的真的画了一堆大饼，比如展示屏幕UI化之类的……努力开发ing
+                </div>
+            </div>
+            <div class="dateBox" id="jx-Ver1.2">
+                <div class="dateHeader">2022年12月10日——jx-Ver1.2</div>
+                <div class="better">
+                    <h3>改进</h3>
+                    1、正式版1.2发布<br>
+                    2、加入了时间显示、高考倒计时、主页、展示屏幕等许多页面的全屏功能<br>
+                    3、投票系统全面升级，无需修改代码无限投票人数实现，加入票数统计排序功能和撤销投票（减票）功能，同时对投票系统主题进行优化。<br>
+                    4、展示屏幕全面升级，优化交互逻辑，加入常用语句功能和说大事儿专用模式，采用bing每日一图作为背景。<br>
+                    5、主页加了三个按钮，中间一个画个大饼。
+                </div>
+                <div class="fixed">
+                    <h3>提示</h3>
+                    由于不明原因，高考倒计时程序在学校白板上运行时间超过一定时间（挺短的时间）会导致崩溃，程序无响应，在家里测试则没有这种情况，正在努力修复，请大家暂停使用（虽然没人用）
+                </div>
+            </div>
+            <div class="dateBox" id="Ver1.2.2">
+                <div class="dateHeader">2023年1月1日——jx-Ver1.2.2</div>
+                <div class="better">
+                    <h3>正式版1.2.2</h3>
+                    1、加入了一九班历的内测<br>
+                    2、加入了公祭日自动滤镜<br>
+                </div>
+                <div class="added">
+                    1、加入了2023新年贺岁程序
+                </div>
+            </div>
+			<div class="dateBox" id="Ver1.3">
+			    <div class="dateHeader">2023年1月1日——jx-Ver1.3</div>
+			    <div class="better">
+					响应式更新
+				</div>
+			</div>
+        </div>
+    </main>
+</body>
+</html>

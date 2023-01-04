@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/randomNumberBuilder.css">
+    <title>随机叫人</title>
+</head>
+<body>
+    <header>
+        <p class="headerText">随机叫人</p>
+    </header>
+    <main>
+        <div class="numberInput" id="name" style="height: 60px;font-size: 55px;color:black;">
+
+        </div>
+        <div id="output">
+            00
+        </div>
+        <input type="text" class="numberInput" id="max" placeholder="请输入生成范围"/>
+        <div class="buttonBox">
+            <button id="build" onclick="rand(),names()">生成</button>
+        </div>
+    </main>
+    <script>
+        rnd.today = new Date();
+        rnd.seed = rnd.today.getTime();
+        function rnd() {
+            rnd.seed = (rnd.seed * 9301 + 49297) % 233280;
+            return rnd.seed / (233280.0);
+        };
+        function rand() {
+            var number = document.getElementById("max").value;
+            var out = Math.ceil(rnd() * number);
+            document.getElementById("output").innerText = out;
+        };
+        
+        // nameList = [prompt("如果需要体验新功能，请传入数组格式的学生名单（粘贴在此弹出框中）")];
+        console.log(nameList);
+        function names(){
+            var number = document.getElementById("max").value;
+            document.getElementById("name").innerHTML = nameList[number - 1];
+        }
+    </script>
+</body>
+</html>

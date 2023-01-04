@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* 所有divflex */
+div {
+  display: flex;
+  /* 调试 */
+  /* border: 1px blue solid; */
+}
+
+/* 初始化button */
+button {
+  border: 0;
+  background-color: #FF5050;
+  padding: 5px;
+  transition: .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 调试 border: 1px blue dotted;*/
+  border-radius: 15px;
+  color: white;
+  font-size: 1.7vw;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #fffd69 0%, #ff5050 60%);
+  cursor: pointer;
+  box-shadow: 0px 3px 10px rgba(107, 29, 29, 0.525);
+  transition: .1s;
+}
+
+button:active {
+  transform: scale(0.9);
+  transform: rotate(0.9);
+}
+
+/* 头部 */
+#header>div {
+  align-items: center;
+}
+
+#header {
+  align-items: center;
+  padding-left: 20px;
+  font-size: 5vw;
+  height: 15%;
+  width: 100%;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #ff0000;
+  border-bottom: 1px #554848 solid;
+  text-shadow: 0px 1px 5px #ff000044;
+}
+
+#buttonBox_Header {
+  justify-content: center;
+  margin-right: 60px;
+  height: 80%;
+  width: 16%;
+}
+
+.button_Header {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+}
+
+/* 主体 */
+#main {
+  height: 60%;
+  width: 100%;
+  flex-direction: row;
+  overflow-x: auto;
+  /* padding-left: 40px;margin-right: 40px; */
+  align-items: center;
+}
+
+/* .card 卡片*/
+.card {
+  height: 90%;
+  width: 20vw;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin: 0px 10px;
+  padding: 5px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: #FFDFDF;
+  transition: .3s;
+  /* width: 20vw; */
+}
+.card:hover{
+  cursor: pointer;
+  box-shadow: 0px 3px 10px rgba(107, 29, 29, 0.525);
+  transform: scale(1.02);
+  transform: rotate(1.02);
+}
+
+.title_Card {
+  height: 16%;
+  width: 100%;
+  font-size: 2.3vw;
+  align-items: center;
+  color: #FF5050;
+  font-weight: bold;
+}
+
+.footer_Card {
+  height: 40%;
+  flex-direction: inherit;
+  justify-content: flex-end;
+}
+
+.text_Card{
+  padding: 5px;color: #554848;
+}
+
+.buttonBox_Card {
+  height: 40%;
+  justify-content: center;
+}
+
+.button_Card {
+  margin: 5px;
+  height: 80%;
+  width: 80%;
+}
+
+/* 足部 */
+#footer {
+  height: 10%;
+  justify-content: space-between;
+}
+
+#footer>div {
+  padding: 10px;
+  align-items: center;
+  color: rgb(120, 120, 120);
+}
+
+#verson {
+  height: 80%;
+  width: auto;
+  font-size: 1vw;
+  margin-left: 10px;
+}
+
+#jx {
+  height: 80%;
+  width: auto;
+  margin-right: 10px;
+  font-size: 1vw;
+  text-align: right;
+}
+
+/* 图标 icons */
+i::before {
+  display: block;
+  font-size: 2.3vw;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+/* 响应式 */
+@media screen and (max-width:900px) {
+  .card {
+    width: 18vw;
+  }
+
+  .title_Card {
+    font-size: 2.5vw;
+  }
+
+  .text_Card {
+    font-size: 1.2vw;
+  }
+}
+
+@media screen and (max-width:600px) {
+  #header {
+    justify-content: center;
+    font-size: 10vw;
+    padding: 0;
+  }
+
+  #buttonBox_Header {
+    display: none;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  #main {
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-bottom: 20px;
+  }
+
+  .card {
+    width: 80%;
+    height: 10%;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .text_Card {
+    display: none;
+  }
+
+  .title_Card {
+    font-size: 6vw;
+  }
+
+  .footer_Card {
+    width: 40%;
+    height: 80%;
+  }
+
+  .buttonBox_Card {
+    width: 100%;
+    height: 100%;
+  }
+
+  i::before{
+    font-size: 6vw;
+  }
+  button{
+    font-size: 4vw;
+  }
+}
+
