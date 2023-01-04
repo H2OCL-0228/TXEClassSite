@@ -22,6 +22,9 @@ function openpage(num){
 //滚轮横向滚动
 let mainScr = document.querySelector('#main');
 mainScr.addEventListener('wheel',function(event){
-  event.preventDefault();
-  mainScr.scrollLeft += event.deltaY;
+  winWidth = document.documentElement.clientWidth;
+  if(winWidth >= 600){
+    event.preventDefault();
+    mainScr.scrollLeft += event.deltaY;
+  }
 })
