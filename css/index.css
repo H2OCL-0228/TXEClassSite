@@ -74,9 +74,10 @@ button:active {
   width: 16%;
 }
 
+
 .button_Header {
-  width: 60px;
-  height: 60px;
+  width: auto;
+  height: 6vh;
   margin: 5px;
 }
 
@@ -174,6 +175,11 @@ i::before {
   font-size: 2.3vw;
   text-align: center;
   padding: 0px 10px;
+}
+
+.button_Header>i::before{
+  display: flex;align-items: center;
+  height: 100%;width: 100%;
 }
 
 /* 响应式 */
