@@ -27,7 +27,7 @@ function handleFullScreen() {
         }
     }
     document.getElementById("fullScreen").style.display = "none";
-    document.getElementById("disFullScreen").style.display = "flex";
+    document.getElementById("disFullScreen").style.display = "block";
 }
 
 function exitFullscreen() {    
@@ -45,7 +45,7 @@ function exitFullscreen() {
 //用来修复↑这个函数的不明原因bug的补丁函数
 function fixerEFS(){
      document.getElementById("disFullScreen").style.display = "none";
-    document.getElementById("fullScreen").style.display = "flex";
+    document.getElementById("fullScreen").style.display = "block";
 }
 
 {/* <button class="headerButton" id="fullScreen"  onclick="handleFullScreen()">

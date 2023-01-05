@@ -5,7 +5,7 @@ function openpage(num){
     "./randomnumberbuilder.html",
     "./timers/countdown.html",
     "./timers/beijingtime.html",
-    "#",
+    "./ontimer.html",
     "./showscreen.html",
     "./toupiao.html",
     "./oncalendar/index.html",

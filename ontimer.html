@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3851947_587w5fl3h6r.css">
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-y: hidden;
+        }
+        body>div{
+          width: 100%;
+        }
+        #output{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 12vw;
+          transition: .3s;
+          color: #FF5050;
+          text-shadow: 0px 3px 10px #601d1da1;
+        }
+        #buttonBox{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #buttonBox>button{
+          /* border-top-left-radius: 10px; */
+          height: auto;
+          width: auto;
+          border: 0;
+          padding: 12px;
+          font-size: 2vw;
+          transition: .1s;
+        }
+        #a{
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+        }
+        #b{
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+        #buttonBox>button:hover{
+          background-color: #FF5050;
+          box-shadow: 0px 3px 10px #601d1d41;
+          transform: scale(1.1);
+          cursor: pointer;
+          color:white;
+        }
+        #buttonBox>button:active{
+          transform: scale(.95);
+        }
+        #buttonBox>button>i{
+          font-size: 2.0vw;
+        }
+        #countDown1{
+          border-radius: 10px;
+          margin-left: 20px;
+        }
+        .ad{
+          border-radius: 10px;
+          margin-left: 10px;
+        }
+        #modalCd{
+          position: absolute;
+          bottom:-300px;
+          transform: scale(0);
+          width: 80%;
+          border-radius: 15px;
+          height: 15vh;
+          padding: 20px;
+          /* border:2px #FF5050 solid; */
+          background-color: rgb(255, 228, 228);
+          box-shadow: 0px 5px 10px #4a15156f;
+          display: flex;
+          align-items: center;
+          transition: .7s;
+        }
+        #modalCd>div{
+          height: 100%;width: auto;
+          display: flex;flex-direction: column;
+          justify-content: center;
+        } 
+        #inModal::before{
+          font-size: 8vw;
+          color: #FF5050;
+          text-shadow: 0px 3px 10px #601d1d41;
+        }
+        #modalText{
+          padding-left: 20px;
+        }
+        #modalText>h3{
+          font-size: 2.5vw;
+        }
+        #modalText>h4{
+          color:#737373;
+          font-size: 1.5vw;
+        }
+        #modalCd>#modalInput{
+          flex-direction: row;
+          flex: 1;justify-content: center;
+        }
+        #modalInput>input{
+          height: 80%;width: 8vw;
+          font-size: 2.5vw;
+          margin: 10px;border-radius: 10px;
+          border:0;outline: 0;
+          text-align: center;
+          font-size: 3vw;
+          background-color: #ff50506f;
+        }
+        #modalCd>button{
+          height: 45%;
+          border-radius: 100%;
+          padding: 5px;
+          aspect-ratio: 1/1;
+          border:2px #ff5050 solid;
+          color:#FF5050;
+          box-shadow: 0px 3px 10px #601d1d41;
+          transition: .3s;
+          display: flex;justify-content: center;
+          align-items: center;
+        }
+        #modalCd>button:hover{
+          background-color: #FF5050;
+          color: white;cursor: pointer;
+        }
+        #modalCd>button>.iconfont{
+          font-size: 2.2vw;
+        }
+    </style>
+		<title>计时器</title>
+	</head>
+	<body>
+		
+		<div id="output">
+      00:00:00
+    </div>
+    <div id="buttonBox">
+      <button id="a" onclick="changeFunc(1),setTime()">
+        <i class="iconfont icon-shizhong"></i>
+        定时
+      </button>
+      <button id="b" onclick = "changeFunc(0)">
+        <i class="iconfont icon-miaobiao"></i>
+        秒表
+      </button>
+      <button id="countDown1" onclick="startTime()" id = "cd">
+        <i class="iconfont icon-Ok" ></i>
+        开始
+      </button>
+      <button  onclick="addTimer()" class = "ad" id = "sad">
+        <i class="iconfont icon-Ok"></i>
+        开始
+      </button>
+      <button  onclick="stopTimer()" class = "ad" id = "ead">
+        <i class="iconfont icon-jinzhi"></i>
+        停止
+      </button>
+      <button class = "ad" id="fullScreen"  onclick="handleFullScreen()"> 
+        <i class="iconfont icon-quanping" ></i>
+        全屏
+      </button>
+      <button class = "ad" id="disFullScreen"  onclick="fixerEFS(),exitFullscreen()">
+        <i class="iconfont icon-quanping"></i>
+        退出
+      </button>
+    </div>
+    <div id="modalCd">
+      <i id="inModal" class = "iconfont icon-shizhong"></i>
+      <div id="modalText">
+        <h3>欢迎！</h3>
+        <h4>您可以在这里设置计时器的时间 XD</h4>
+      </div>
+      <div id="modalInput">
+        <input type="text" id = "h" placeholder="h">
+        <input type="text" id = "m" placeholder="m">
+        <input type="text" id = "s" placeholder="s">
+      </div>
+      <button onclick="closeSetTime()"> <i class="iconfont icon-ok"></i></button>
+    </div>
+		
+		<script>
+
+      //还是不要在意这 JS 里面的*山代码 → :D TengKong这个憨憨写的
+      // awa 后面肯定还是要改的 , 先能用就行！=D
+      //至于为啥要注释成这个样子emm , 因为这个作者他比较肯定他后面是看不懂的:(
+      //说不定还要自己对自己之前的水平表示强烈的怀疑，所以还是尽量让自己能看懂 XD
+      //像 ↓下面 这种代码qwq，属于要跑的那种，人和代码随便跑一个都可以(嘿，溜 ~
+
+			let secCountDown;
+      //===倒计时函数起=========================================================================
+			//计时器功能
+			function startTime(){
+				
+				let timeNum = [ "h" , "m" , "s" ];
+
+        //获取用户输入值
+				for( var i = 0 ; i < timeNum.length ; i ++ ){
+					timeNum[i] = Number(document.getElementById(timeNum[i]).value);
+				}
+
+        //定义变量方便计算
+				hour = timeNum[0] , min = timeNum[1] , sec = timeNum[2];
+        console.log(timeNum);
+        //===计时器内函数起=========================================================================
+
+				secCountDown = setInterval(function(){
+
+        //----------------------------------------------------------------
+
+          //分钟和小时之间的关系
+					hour = sec === 0 && min === 0 ? hour - 1 : hour ;//当秒和分钟都为 0 时，小时减 1
+          min = sec === 0 && min === 0 ? 60 : min ; //条件同上，分钟变成 60
+
+        //----------------------------------------------------------------
+
+          //秒和分钟之间的关系
+          min = sec === 0 ? min - 1 : min ;//当秒为 0 时，分钟减一
+          sec = sec === 0 ? 60 : sec ;//条件同上，秒变成 60
+
+        //----------------------------------------------------------------
+
+          //秒自减，倒计时器主体，控制所有逻辑判断 , 其他量减少取决于秒的自减少。
+					sec = sec - 1;
+
+        //----------------------------------------------------------------
+
+          //逻辑判断，计时器停止，当小时为 -1 时停止计时器
+					if( hour === -1 ){
+						clearInterval(secCountDown);
+						hour = 0;min = 0;sec = 0;//由于小时为 -1 时停止，所以需要归零，顺便把其他的也归零了。
+					}
+
+        //----------------------------------------------------------------
+
+          //结果数组遍历，个位数补零输出
+          reArr = new Array( hour , min , sec );//结果塞进数组
+          for( var t = 0 ; t < reArr.length ; t ++ ){//遍历数组
+            // temp = String(reArr[t]); <==如果你非要用 .length 判断的话
+            if(reArr[t] < 10){
+              reArr[t] = "0" + reArr[t];//补0
+            }
+          }
+
+        //----------------------------------------------------------------
+
+          console.log(reArr);
+
+          document.getElementById("output").innerHTML = reArr[0] + ":" + reArr[1] + ":" + reArr[2];
+        } , 1000);
+        //===计时器内函数结束=========================================================================
+			}
+      //===倒计时函数结束=============================================================================
+
+
+			let addTimers;
+
+      //===秒表函数起=========================================================================
+      function addTimer(){
+
+        //定义数组来作为时间的初始化
+        //在以下函数种，该数组 timeArr 的 [0] = 小时 ; [1] = 分钟 ; [2] = 秒
+        let timeArr = new Array(0,0,0);
+
+        //===计时器内函数起=========================================================================
+        addTimers = setInterval(function(){
+        //----------------------------------------------------------------
+
+          //秒自增，控制主逻辑和其他量的变化
+          timeArr[2] = Number(timeArr[2]) + 1;
+
+        //----------------------------------------------------------------
+
+          //当秒为60的时候，让分钟加1 , 秒归零
+          timeArr[2] = timeArr[2] === 60 ? 0 : Number(timeArr[2]);//XD 至于这里的 Number(), 在后面补 0 的时候
+          timeArr[1] = timeArr[2] === 60 ? Number(timeArr[1]) + 1 : Number(timeArr[1]);//会把数组该项变成字符串, 所以要转换，要不然就成拼接了
+
+        //----------------------------------------------------------------
+
+          //当分钟为60的时候，让小时加1 , 分钟归零
+          timeArr[2] = timeArr[1] === 60 ? 0 : Number(timeArr[2]);
+          timeArr[0] = timeArr[1] === 60 ? Number(timeArr[0]) + 1 : Number(timeArr[0]);
+
+        //----------------------------------------------------------------
+
+          //三元表达式补0
+          for( var t = 0 ; t < timeArr.length ; t ++ ){
+            timeArr[t] = timeArr[t] < 10 ? timeArr[t] = "0" + timeArr[t] : timeArr[t];
+          }
+        //----------------------------------------------------------------  
+
+          //把结果显示出来
+          document.getElementById("output").innerHTML = timeArr[0] + ":" + timeArr[1] + ":" + timeArr[2];
+
+        //----------------------------------------------------------------  
+          console.log(timeArr);
+        },1000)
+        //===计时器内函数结束=========================================================================
+      }
+      //===秒表函数结束=========================================================================
+
+      //关闭秒表 ↓
+      function stopTimer(){
+        clearInterval(addTimers);
+      }
+
+      //===DOM界面控制=========================================================================
+
+
+      //调出时间设置模态框
+      function setTime(){
+        document.getElementById("modalCd").style.bottom = "30px";
+        document.getElementById("modalCd").style.transform = "scale(1)"; 
+      }
+
+      //关闭时间设置模态框
+      function closeSetTime(){
+        document.getElementById("modalCd").style.bottom = "-300px";
+        document.getElementById("modalCd").style.transform = "scale(0)"; 
+        h = document.getElementById("h").value;
+        m = document.getElementById("m").value;
+        s = document.getElementById("s").value;
+        h = Number(h < 10) ? "0" + h : h ;
+        m = Number(m < 10) ? "0" + m : m ;
+        s = Number(s < 10) ? "0" + s : s ;
+        document.getElementById("output").innerHTML = h + ":" + m + ":" + s ;
+      }
+
+      //提前隐藏秒表相关按钮
+      document.getElementById("sad").style.display = "none";
+      document.getElementById("ead").style.display = "none";
+
+      //定义函数判断功能类型
+      let cd = true;
+      function changeFunc(name){
+        if (name === 1){
+          document.getElementById("sad").style.display = "none";
+          document.getElementById("ead").style.display = "none";
+          document.getElementById("countDown1").style.display = "block";
+          cd = false;
+        }else{
+          document.getElementById("sad").style.display = "block";
+          document.getElementById("ead").style.display = "block";
+          document.getElementById("countDown1").style.display = "none";
+          cd = true;
+        }
+      }
+      //===DOM界面控制=========================================================================
+		</script>
+    <script src="./js/fullScreen.js"></script>
+	</body>
+</html>
