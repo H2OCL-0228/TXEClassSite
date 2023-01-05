@@ -55,33 +55,33 @@ function startOneSay(){
 }
 
 //全屏后更改字号函数
-function addFontFullScreen(){
-    document.getElementById("weekDay").style.fontSize = "72px";
-    document.getElementById("month").style.fontSize = "25px";
-    document.getElementById("timeBox").style.fontSize = "200px";
-    document.getElementById("cleanStudentMain").style.fontSize = "45px";
-    document.getElementById("cleanBlackboardStudentMain").style.fontSize = "45px";
-    document.getElementById("toEatMain").style.fontSize = "50px";
-    for(i = 0 ; i <= 8 ; i++){
-        document.getElementById("c" + i).style.fontSize = "40px";
-    }
-    let a = new Date();
-    if(a.getDay() === 3){
-        document.getElementById("c" + 4).style.fontSize = "30px";
-    }
-}
+// function addFontFullScreen(){
+//     document.getElementById("weekDay").style.fontSize = "72px";
+//     document.getElementById("month").style.fontSize = "25px";
+//     document.getElementById("timeBox").style.fontSize = "200px";
+//     document.getElementById("cleanStudentMain").style.fontSize = "45px";
+//     document.getElementById("cleanBlackboardStudentMain").style.fontSize = "45px";
+//     document.getElementById("toEatMain").style.fontSize = "50px";
+//     for(i = 0 ; i <= 8 ; i++){
+//         document.getElementById("c" + i).style.fontSize = "40px";
+//     }
+//     let a = new Date();
+//     if(a.getDay() === 3){
+//         document.getElementById("c" + 4).style.fontSize = "30px";
+//     }
+// }
 
-function disAddFontFullScreen(){
-    document.getElementById("weekDay").style.fontSize = "50px";
-    document.getElementById("month").style.fontSize = "20px";
-    document.getElementById("timeBox").style.fontSize = "130px";
-    document.getElementById("cleanStudentMain").style.fontSize = "25px";
-    document.getElementById("cleanBlackboardStudentMain").style.fontSize = "25px";
-    document.getElementById("toEatMain").style.fontSize = "25px";
-    for(i = 0 ; i <= 8 ; i++){
-        document.getElementById("c" + i).style.fontSize = "30px";
-    }
-}
+// function disAddFontFullScreen(){
+//     document.getElementById("weekDay").style.fontSize = "50px";
+//     document.getElementById("month").style.fontSize = "20px";
+//     document.getElementById("timeBox").style.fontSize = "130px";
+//     document.getElementById("cleanStudentMain").style.fontSize = "25px";
+//     document.getElementById("cleanBlackboardStudentMain").style.fontSize = "25px";
+//     document.getElementById("toEatMain").style.fontSize = "25px";
+//     for(i = 0 ; i <= 8 ; i++){
+//         document.getElementById("c" + i).style.fontSize = "30px";
+//     }
+// }
 
 
 //课程表函数测试

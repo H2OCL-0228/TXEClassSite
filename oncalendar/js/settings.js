@@ -66,7 +66,7 @@ window.addEventListener("resize",function(){
 		a.style.display = "flex";
 		a.style.height = "25%";
 		a.style.width = "35%";
-		a.style.fontSize = "130px";
+		// a.style.fontSize = "130px";
 	}else{
 		document.getElementById("noticeBox").style.display = "none";
 		document.getElementById("smallScreen").style.display = "flex";
