@@ -141,7 +141,7 @@ function grayScale(){
         noticeByBoxForward("向伟大的抗疫工作者致敬");
     }//疫情封闭管理专项
     else{
-        noticeByBoxForward("遵守疫情防控政策，调整心态，积极向上");
+        noticeByBoxForward("新春快乐，万事顺意！");
     }
 }
 

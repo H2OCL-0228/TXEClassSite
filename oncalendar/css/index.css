@@ -218,7 +218,7 @@ button{
 
 /* 版权信息 */
 #banQuan{
-    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size: 1vw;
+    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size: 0.8vw;
     position: absolute;bottom: 5px;right: 50px;text-align: right;padding: 5px;border-radius: 5px;
 }
 #banQuan:hover{
