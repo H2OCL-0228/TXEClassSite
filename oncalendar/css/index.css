@@ -406,7 +406,7 @@ button{
 
 
 /* 响应式 */
-@media screen and (max-width:800px){
+@media screen and (max-width:600px){
     body,html{
         overflow-y: hidden;overflow-x: hidden;
     }
