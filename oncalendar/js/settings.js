@@ -17,7 +17,6 @@ function color(color){
         document.getElementById("cleanStudentTitle").style.color = "rgb(55,55,55)";
         document.getElementById("cleanBlackboardStudentTitle").style.color = "rgb(55,55,55)";
         document.getElementById("toEatTitle").style.color = "rgb(55,55,55)";
-
     }else{
         document.getElementById("weekDay").style.color = "white";
         document.getElementById("cleanStudentTitle").style.color = "white";
