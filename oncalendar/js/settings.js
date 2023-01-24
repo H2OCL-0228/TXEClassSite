@@ -49,6 +49,7 @@ function showNormal(){
     document.getElementById("timeBox").style.width = "35%";
     document.getElementById("timeBox").style.height = "25%";
     document.getElementById("homeworks").style.removeProperty("position");
+	document.getElementById("noticeBox").style.display = "flex";
 	if(windowWidth >= 650){
 		document.getElementById("noticeBox").style.display = "flex";
 	}else{
