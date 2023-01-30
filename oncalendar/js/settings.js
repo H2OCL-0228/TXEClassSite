@@ -115,3 +115,8 @@ function techyesPic(){
 	MG.infoBind(b);
 	MG.setBg(1);
 }
+
+//一言和诗词切换
+function changePoetry(name){
+	if(name === "onesay"){}
+}
