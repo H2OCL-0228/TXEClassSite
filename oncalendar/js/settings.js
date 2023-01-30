@@ -1,12 +1,12 @@
 //颜色主题
 function color(color){
-    document.getElementById("weekDay").style.backgroundColor = color;
-    document.getElementById("cleanStudentTitle").style.backgroundColor = color;
-    document.getElementById("cleanBlackboardStudentTitle").style.backgroundColor = color;
-    document.getElementById("toEatTitle").style.backgroundColor = color;
-    document.getElementById("timeBox").style.backgroundColor = color + '70';
-    document.getElementById("simplePoetry").style.backgroundColor = color + '50';
-    document.getElementById("noticeBox").style.backgroundColor = color + '50';
+    document.getElementById("weekDay").style.backgroundColor = color + '90';
+    document.getElementById("cleanStudentTitle").style.backgroundColor = color + '90';
+    document.getElementById("cleanBlackboardStudentTitle").style.backgroundColor = color + '90';
+    document.getElementById("toEatTitle").style.backgroundColor = color + '90';
+    document.getElementById("timeBox").style.backgroundColor = color + '40';
+    document.getElementById("simplePoetry").style.backgroundColor = color + '40';
+    document.getElementById("noticeBox").style.backgroundColor = color + '40';
     for( i = 0 ; i <= 8 ; i ++){
         a = 'c' + i;console.log(a);
         // document.getElementById(a).style.borderBottom = "1px " + color + " solid";
@@ -105,4 +105,13 @@ function showSmallNormal(){
 	}else{
 		document.getElementById("timeBox").style.display = "none";
 	}
+}
+
+// 背景切换
+function techyesPic(){
+	let a = document.body;
+	let b = document.getElementById("bgInfor");
+	MG.bgBind(a);
+	MG.infoBind(b);
+	MG.setBg(1);
 }

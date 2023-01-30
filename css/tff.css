@@ -1,0 +1,9 @@
+/* 字体导入 */
+@font-face{
+    font-family: "HarmonySC";
+    src: url("../oncalendar/tff/HarmonyOS_Sans_SC_Regular.ttf");
+  }
+  
+  *{
+    font-family: HarmonySC;
+  }  

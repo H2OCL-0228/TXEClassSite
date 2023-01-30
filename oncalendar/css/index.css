@@ -7,12 +7,22 @@ html,body{
     margin: 0px;padding: 0px;
     overflow-y: hidden;overflow-x: hidden;
     transition-duration: 0.2s;
-    background-size: 100%;color:#424242;
+    background-size: cover;color:#424242;
     background-image: url(https://www.yangshangzhen.com/bing/wallpaper);
     /* 调试 */
     /* background-color: rgb(255, 255, 255); */
     /* font-family: 思源宋体;font-weight: bold; */
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 字体导入 */
+@font-face{
+    font-family: "HarmonySC";
+    src: url("../tff/HarmonyOS_Sans_SC_Regular.ttf");
+}
+
+*{
+    font-family: HarmonySC;
 }
 
 /* 侧边栏整体排版 */
@@ -27,12 +37,28 @@ html,body{
     padding-left: 40px;
 }
 
+/* 鼠标样式改变 */
+button{
+    cursor: pointer;
+}
+
+/* 背景蒙版 */
+body>div{
+    z-index:3;
+}
+html::after{    
+    content: "";
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0; 
+    background-color: #00000036;
+}
+
 /* 最上面的日期框 */
 #dateBox{
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     height: 15%;width: 90%;
-    border-radius: 10px;margin-top: 25px;
+    border-radius: 10px;margin-top: 3vh;
     display: flex;flex-shrink: 0;align-items: center;
     flex-direction: column;
 }
@@ -54,27 +80,28 @@ html,body{
 /* 下面的其他元素整体布局 */
 #sidebarBoxTwo{
     display: flex;flex: 1;
-    width: 90%;padding-top: 20px;
+    width: 90%;padding-top: 2.5vh;
 }
 
 /* 侧边栏的footer */
 #sidebarFooter{
-    margin: 0px;padding-top: 0px;z-index: 7;
-    height: 10%;width: 90%;padding-bottom: 10px;
+    margin: 0px;padding-top: 0px;
+    width: 90%;
+    padding-bottom: 2.5vh;
     display: flex;align-items: center;
 }
 
 /* sidebarBoxTwo里面的元素 课程表*/
 #classList{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(10px);
-    height: 95%;width: 20%;
+    width: 20%;height: 90%;
     border-radius: 10px;margin-left: 20px;padding-top: 20px;
     display: flex;flex-direction: column;flex-shrink: 0;
     align-items: center;
 }
 .classes{
-    height: 10%;width: 90%;color:rgb(0, 0, 0);
+    height: 10%;width: 90%;color:rgb(255, 255, 255);
     border-top: 2px #FF5050 solid;
     font-size: 2vw;display: flex;justify-content: center;align-items: center;
 }
@@ -87,7 +114,7 @@ html,body{
 
 /* 姓名框 */
 .sidebarNameBox{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(10px);
     height: 20%;width: 95%;
     border-radius: 10px;margin-top: 10px;
@@ -153,7 +180,7 @@ button{
     border-radius: 25px;color:#ffffff;
     font-size: 10vw;font-weight: bold;
     position: absolute;
-    bottom: 80px;right: 60px;
+    bottom:10%;right: 60px;
 }
 
 /* 极简诗词显示 */
@@ -218,8 +245,8 @@ button{
 
 /* 版权信息 */
 #banQuan{
-    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size: 0.8vw;
-    position: absolute;bottom: 5px;right: 50px;text-align: right;padding: 5px;border-radius: 5px;
+    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size:1vh;
+    position: absolute;bottom: 15px;right: 50px;text-align: right;padding: 5px;border-radius: 5px;
 }
 #banQuan:hover{
     background-color: rgba(255, 255, 255,0.5);backdrop-filter: blur(10px);
@@ -297,7 +324,7 @@ button{
 
 #verson{
     height: 30px;width: 90%;border-bottom: 1px rgb(55, 55, 55) solid;margin-top: 20px;
-    font-size: 2vw;display: flex;justify-content: center;align-items: center;padding-bottom: 10px;
+    font-size: 1.35vw;display: flex;justify-content: center;align-items: center;padding-bottom: 10px;
 }
 
 #aboutAdd{
@@ -357,7 +384,7 @@ button{
 }
 
 #setTitle{
-    height: 30px;width: 100%;font-size: 1vw;padding: 5px;margin:0;margin-bottom: 10px;
+    height: 30px;width: 100%;font-size: 1.2vw;padding: 5px;margin:0;margin-bottom: 10px;
 }
 #setAction{
     height: auto;width: 100%;margin-bottom: 10px;display: flex;flex-direction: row;
@@ -453,5 +480,21 @@ button{
 	#setTitle{
 		font-size: 23px;
 	}
+}
 
+
+/* 设置里的按钮 */
+.setButton{
+    font-size: 1.3vw;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: .1s;
+}
+.setButton:hover{
+    transform: scale(1.05);
+}
+
+.setButton:active{
+    transform: scale(1);
 }

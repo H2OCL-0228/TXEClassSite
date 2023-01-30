@@ -3,6 +3,16 @@
   padding: 0;
 }
 
+/* 字体导入 */
+@font-face{
+  font-family: "HarmonySC";
+  src: url("../oncalendar/tff/HarmonyOS_Sans_SC_Regular.ttf");
+}
+
+*{
+  font-family: HarmonySC;
+}
+
 html,
 body {
   height: 100%;
