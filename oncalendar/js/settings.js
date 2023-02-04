@@ -108,15 +108,55 @@ function showSmallNormal(){
 }
 
 // 背景切换
-function techyesPic(){
-	let a = document.body;
-	let b = document.getElementById("bgInfor");
-	MG.bgBind(a);
-	MG.infoBind(b);
-	MG.setBg(1);
+// function techyesPic(){
+// 	let a = document.body;
+// 	let b = document.getElementById("bgInfor");
+// 	MG.bgBind(a);
+// 	MG.infoBind(b);
+// 	MG.setBg(1);
+// }
+
+//临时背景切换
+//默认使用bing
+document.body.style.backgroundImage = "url(https://www.yangshangzhen.com/bing/wallpaper)";
+//技协背景
+function startTechyesBg(){
+	clearInterval(window.techyesBgInterval);
+	bg();
+	clearInterval(bg.Interval);
+	window.techyesBgInterval = setInterval( function(){
+		bg();
+	} , 300000 );
+}
+//bing背景
+function bingBg(){
+	clearInterval(window.techyesBgInterval);
+	document.body.style.backgroundImage = "url(https://www.yangshangzhen.com/bing/wallpaper)";
+
+}
+
+//今日诗词调用函数
+function simplePoetry(){
+	jinrishici.load(function(result){
+		let sentence = result.data.content;
+		let poetryInfo = result.data.origin;
+		document.getElementById("simplePoetry").innerHTML = sentence;
+		document.getElementById("poetryInfor").innerHTML = 
+		"诗词信息: " + poetryInfo.dynasty + "&nbsp" + poetryInfo.author + 
+		"&nbsp" + "《" + poetryInfo.title + "》";
+	});
 }
 
 //一言和诗词切换
 function changePoetry(name){
-	if(name === "onesay"){}
+	if(name === "onesay"){
+		clearInterval(window.poetryInterval);
+		clearInterval(window.oneSayInterval);
+		oneSay();startOneSay();
+	}else if(name === "poetry"){
+		clearInterval(window.poetryInterval);
+		clearInterval(window.oneSayInterval);
+		simplePoetry()
+		window.poetryInterval = setInterval(simplePoetry,300000);
+	}
 }

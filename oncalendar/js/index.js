@@ -37,52 +37,29 @@ function startTime(){
     timeStart = setInterval(function(){time(),toEatTime()},1000);
 }
 
-//一言API 复制的
+//一言API 调用函数
 function oneSay(){
     fetch('https://v1.hitokoto.cn')
         .then(response => response.json())
         .then(data => {
-        const hitokoto = document.getElementById('simplePoetry')
-        hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-        hitokoto.innerText = data.hitokoto
+
+        const hitokoto = document.getElementById('simplePoetry');
+        hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid;
+        hitokoto.innerText = data.hitokoto;
+
+        const hitoInfo = document.getElementById("poetryInfor");
+        hitoInfo.innerHTML = "一言出处:" + data.from + "&nbsp" + "一言作者:" + data.from_who;
         })
         .catch(console.error)
 }
 
 //设置一言更换计时器
 function startOneSay(){
-    setInterval(function(){oneSay()},180000);
+    window.oneSayInterval = setInterval(function(){oneSay()},300000);
 }
-
-//全屏后更改字号函数
-// function addFontFullScreen(){
-//     document.getElementById("weekDay").style.fontSize = "72px";
-//     document.getElementById("month").style.fontSize = "25px";
-//     document.getElementById("timeBox").style.fontSize = "200px";
-//     document.getElementById("cleanStudentMain").style.fontSize = "45px";
-//     document.getElementById("cleanBlackboardStudentMain").style.fontSize = "45px";
-//     document.getElementById("toEatMain").style.fontSize = "50px";
-//     for(i = 0 ; i <= 8 ; i++){
-//         document.getElementById("c" + i).style.fontSize = "40px";
-//     }
-//     let a = new Date();
-//     if(a.getDay() === 3){
-//         document.getElementById("c" + 4).style.fontSize = "30px";
-//     }
+// function test(){
+//     clearInterval(window.oneSayInterval);
 // }
-
-// function disAddFontFullScreen(){
-//     document.getElementById("weekDay").style.fontSize = "50px";
-//     document.getElementById("month").style.fontSize = "20px";
-//     document.getElementById("timeBox").style.fontSize = "130px";
-//     document.getElementById("cleanStudentMain").style.fontSize = "25px";
-//     document.getElementById("cleanBlackboardStudentMain").style.fontSize = "25px";
-//     document.getElementById("toEatMain").style.fontSize = "25px";
-//     for(i = 0 ; i <= 8 ; i++){
-//         document.getElementById("c" + i).style.fontSize = "30px";
-//     }
-// }
-
 
 //课程表函数测试
 function classList(){
@@ -141,18 +118,26 @@ function grayScale(){
         noticeByBoxForward("向伟大的抗疫工作者致敬");
     }//疫情封闭管理专项
     else{
-        noticeByBoxForward("新春快乐，万事顺意！");
+        noticeByBoxForward("新学期，新征程，新梦想！");
     }
 }
 
 //body的onload函数们
 function bodyOnload(){
+    closeCover()
     startTime();
     oneSay();
     classList();
     startOneSay();
     grayScale();
 	smallScreen();
+}
+
+//关闭加载动画函数
+function closeCover(){
+    setTimeout(() => {
+       document.getElementById("cover").style.display = "none"; 
+    }, 9000);
 }
 
 //通知气泡控制函数
@@ -189,3 +174,7 @@ function toEatTime(){
     }
 }
 
+// 联系方式
+function callUs(){
+    alert('如关于Oncalender您有任何的建议或反馈，请联系：\n TengKong的QQ:2517940148 \n技协官网:thisis.host');
+}

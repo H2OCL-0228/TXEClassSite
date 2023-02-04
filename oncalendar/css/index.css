@@ -245,7 +245,7 @@ button{
 
 /* 版权信息 */
 #banQuan{
-    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size:1vh;
+    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size:.7vw;
     position: absolute;bottom: 15px;right: 50px;text-align: right;padding: 5px;border-radius: 5px;
 }
 #banQuan:hover{
@@ -497,4 +497,48 @@ button{
 
 .setButton:active{
     transform: scale(1);
+}
+
+/* 加载动画 */
+#cover{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#coverMain{
+    height: 35%;
+    padding: 20px;
+}
+
+#coverImg{
+    height: 80%;width: auto;
+}
+
+#kuang{
+    height: 25px;
+    width: 50%;
+    border: 1.5px black solid;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+#tiao{
+    height: 100%;
+    width: 0%;
+    background-color: #FF5050;
+    border-radius: 20px;
+    animation: tiaoChange 10s forwards;
+}
+
+@keyframes tiaoChange{
+    to{
+        width: 100%;
+    }
 }

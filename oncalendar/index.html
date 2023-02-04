@@ -9,11 +9,22 @@
 </head>
 <body onload="bodyOnload()">
 
+    <!-- 加载动画 -->
+    <div id="cover">
+        <div id="coverMain">
+            <img src="./pictures/19calendar (1).png" id="coverImg" >
+        </div>
+        <div id="kuang">
+            <div id="tiao">
+                
+            </div>
+        </div>
+    </div>
+
     <!-- 打开右侧侧边栏的按钮 -->
     <button class="openRightSideBarButton" id="openRightSideBarButton" onclick="openOrCloseRight()">
         <img src="./pictures/rightSideBarButtonSVG.svg" style="height: 50%;width: auto;">
     </button>
-
 
     <!-- 右侧侧边栏 -->
     <div class="rightSideBar" id = "rightSideBar">
@@ -66,12 +77,17 @@
             </div>
             <div id="setTitle">背景图库选择</div>
             <div id="setAction">
-                <button class="setButton">
+                <button class="setButton" onclick="bingBg()">
                     必应每日一图
                 </button>
-                <button class="setButton">
+                <button class="setButton" onclick="startTechyesBg()">
                     一卷图库@野生技协
                 </button>
+            </div>
+            <div id="setTitle">文案来源选择</div>
+            <div id="setAction">
+                <button class="setButton" onclick="changePoetry('onesay')">一言API</button>
+                <button class="setButton" onclick="changePoetry('poetry')">今日诗词API</button>
             </div>
         </div>
     </div>
@@ -123,6 +139,19 @@
             <div id="verson">测试版v1.2.3 || Beta1.2.3</div>
             <div id="aboutChange">
                 1、响应式更新测试
+            </div>
+            <div id="verson">正式版v1.3.0 || Verson1.3.0</div>
+            <div id="aboutAdd">
+                1、添加了野生技协一卷图库的背景图片选项<br>
+                2、添加了右上角文案的今日诗词API选项<br>
+                3、添加了加载动画<br>
+                4、在页面左下角添加了一言API和今日诗词的详细信息。
+            </div>
+            <div id="aboutFix">
+                1、修复了焦点模式响应式和切换中个别元素消失的问题
+            </div>
+            <div id="aboutChange">
+                ! 由于年级部的分批就餐安排神操作乱到飞起，下次吃饭模块暂时停止维护 !
             </div>
         </div>
     </div>
@@ -194,28 +223,31 @@
             <button class="buttonWidthSameAsHeight" id="footerButton" onclick="openModal('modalSettings')">
                 <img src="./pictures/settings.svg"  class="inWsahButtonImg">
             </button>
-            <button class="buttonWidthSameAsHeight" id="footerButton">
+            <button class="buttonWidthSameAsHeight" id="footerButton" onclick="callUs()">
                 <img src="./pictures/24gf-headset.svg"  class="inWsahButtonImg">
             </button>
             <div id="banBen">
-               Beta Ver1.2.3
+                Main Ver1.3.0
             </div>
         </div>
     </div>
 
 
     <!-- 布置作业框 -->
-    <div id="homeworks">
-
-    </div>
-
+    <div id="homeworks"></div>
+    <!-- 主时钟 -->
     <div class="timeBox" id="timeBox"></div>
-    <div class="simplePoetry" id="simplePoetry" onclick="oneSay()"></div>
+    <!-- 右上角文案框 -->
+    <div class="simplePoetry" id="simplePoetry" onclick="oneSay()">
+        <!-- <span id="jinrishici-sentence">正在加载今日诗词....</span> -->
+    </div>
     <div class="banQuan" id="banQuan">
-        <a id="bgInfor">你好</a>
+        <a id="poetryInfor"></a>
+        <a id="bgInfor"></a>
         开发：TengKong@野生技协<br>
         野生技协合作：方块茶话会 音幻宝中 朗诵社 排球社 合唱团 街舞社 汉服社 航模社 民乐社 <br>心理社 书画社 动漫社 舞蹈队 日语社 Instreet社 机器人社 推理社 篮裁社 魔术社 冒险家协会<br>
     </div>
+    <script src="https://exam.thisis.host/js/gallery.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script src="https://thisis.host/monoroll/load.js"></script>
     <script src="./js/index.js"></script>
