@@ -26,6 +26,23 @@
         <img src="./pictures/rightSideBarButtonSVG.svg" style="height: 50%;width: auto;">
     </button>
 
+
+    <!-- 课程表班级选择器 -->
+    <div id="chooseClassList">
+        <button class="buttonWidthSameAsHeight" id="buttonCloseModal" onclick="closeModal('chooseClassList')" style="font-size:1.25vw;">✖</button>
+        <div id="chooseLeft">
+            <img id="chooseLogo" src="./pictures/19calendar (1).svg">
+            <h2>欢迎使用一九班历</h2>
+            <h3>Welcome to Oncalender</h3>
+        </div>
+        <div id="chooseRight">
+            <h1>请选择你的班级</h1>
+            <p>点击班级后将会直接选中，您可以在侧边栏中重新选择</p>
+            <div id="chooseMain">
+            </div>
+        </div>
+    </div>
+
     <!-- 右侧侧边栏 -->
     <div class="rightSideBar" id = "rightSideBar">
         <div class="inRight" id="inRight">
@@ -38,8 +55,12 @@
                 <p class="inRightP">发布通知</p>
             </button>
             <button class="inRightButton" id="focus" onclick="showFocus()">
-                <img src="./pictures/focus.svg" class="inRightImg" style="height: 60%;width: auto;border:1px white solid;border-radius: 5px;padding: 5px;">
+                <img src="./pictures/focus.svg" class="inRightImg" style="height: 60%;width: auto;">
                 <p class="inRightP">焦点模式</p>
+            </button>
+            <button class="inRightButton" id="focus" onclick="chooseClass()">
+                <img src="./pictures/class.svg" class="inRightImg" style="height: 60%;width: auto;">
+                <p class="inRightP">切换班级</p>
             </button>
         </div>
         <button class="about" id="about" onclick="openModal('modalAbout')">
@@ -153,6 +174,10 @@
             <div id="aboutChange">
                 ! 由于年级部的分批就餐安排神操作乱到飞起，下次吃饭模块暂时停止维护 !
             </div>
+            <div id="verson">正式版v1.4.0 || Verson1.4.0</div>
+            <div id="aboutAdd">
+                1、构建了高一课表接口，并进行了全年级课表的适配准备。
+            </div>
         </div>
     </div>
 
@@ -196,10 +221,10 @@
                     </div>
                     <div class="sidebarNameBox" id="toEatBox">
                         <div class="sidebarNameBoxTitle" id="toEatTitle">
-                            下次吃饭
+                            今日晚课
                         </div>
                         <div class="sidebarNameBoxMain" id="toEatMain">
-
+                            //
                         </div>
                     </div>
 					<!-- 响应式小屏幕提醒 -->
@@ -227,7 +252,7 @@
                 <img src="./pictures/24gf-headset.svg"  class="inWsahButtonImg">
             </button>
             <div id="banBen">
-                Main Ver1.3.0
+                Main Ver1.4.0
             </div>
         </div>
     </div>
@@ -247,6 +272,7 @@
         开发：TengKong@野生技协<br>
         野生技协合作：方块茶话会 音幻宝中 朗诵社 排球社 合唱团 街舞社 汉服社 航模社 民乐社 <br>心理社 书画社 动漫社 舞蹈队 日语社 Instreet社 机器人社 推理社 篮裁社 魔术社 冒险家协会<br>
     </div>
+    <script src="https://hclassserver.github.io/classlist.js"></script>
     <script src="https://exam.thisis.host/js/gallery.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script src="https://thisis.host/monoroll/load.js"></script>

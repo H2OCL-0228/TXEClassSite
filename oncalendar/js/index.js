@@ -61,21 +61,39 @@ function startOneSay(){
 //     clearInterval(window.oneSayInterval);
 // }
 
-//课程表函数测试
-function classList(){
+//向课表选择器中填充元素
+function addChooseClasslistButtons(){
+    for(var i = 1;i <= 30;i ++){
+        document.querySelector("#chooseMain").innerHTML = 
+        document.querySelector("#chooseMain").innerHTML + 
+        '<div class="chooseButton" onclick="getList(' + i + ')">高一' + i + '班课程表</div>'
+    }
+}
+
+//从文件获取课程表变量
+// function getList(indexs){   
+//     varClassList(indexs);
+// }
+
+//课程表函数
+function getList(indexs){
+
+    varClassList(indexs);
+
+    document.getElementById("classList").innerHTML = "";
 
     for(i = 0 ; i <= 8 ; i++){
         let a = document.getElementById("classList").innerHTML;
         document.getElementById("classList").innerHTML = a + "<div class = \"classes\" id = \"c" + i +"\"></div>";
     }
 
-    lMon = ["外","化","数","地","语","理","艺","体","班"];
-    lTue = ["数","语","理","史","外","政","数","自","自"];
-    lWed = ["语","外","数","技","理化","语","生","体","自"];
-    lThu = ["数","理","外","理","外","化","数","政","自"];
-    lFri = ["数","语","生","史","地","化","理","外","自"];
-    lSat = ["当","前","星","期","值","暂","无","课","表"];
-    lSun = ["当","前","星","期","值","暂","无","课","表"];
+    // lMon = ["外","化","数","地","语","理","艺","体","班"];
+    // lTue = ["数","语","理","史","外","政","数","自","自"];
+    // lWed = ["语","外","数","技","理化","语","生","体","自"];
+    // lThu = ["数","理","外","理","外","化","数","政","自"];
+    // lFri = ["数","语","生","史","地","化","理","外","自"];
+    // lSat = ["当","前","星","期","值","暂","无","课","表"];
+    // lSun = ["当","前","星","期","值","暂","无","课","表"];
 
     cList = new Array(lSun , lMon , lTue , lWed , lThu , lFri , lSat);
 
@@ -124,10 +142,13 @@ function grayScale(){
 
 //body的onload函数们
 function bodyOnload(){
-    closeCover()
+    clearInterval(bg.interval);
+    // getList(9);
+    addChooseClasslistButtons()
+    closeCover();
     startTime();
     oneSay();
-    classList();
+    // classList();
     startOneSay();
     grayScale();
 	smallScreen();
@@ -137,7 +158,7 @@ function bodyOnload(){
 function closeCover(){
     setTimeout(() => {
        document.getElementById("cover").style.display = "none"; 
-    }, 9000);
+    }, 1);
 }
 
 //通知气泡控制函数
@@ -149,30 +170,30 @@ function noticeByBoxForward(text){
 }
 
 //吃饭时间计算函数
-function toEatTime(){
-    isFirst = new Date().getDay() % 2;
-    h = new Date().getHours();
-    isZero = ["06:55","12:20","18:05"];
-    isntZero = ["06:55","12:10","17:55"];
-    eatTime = document.getElementById("toEatMain");
-    if( isFirst === 0){
-        if( h > 7 && h <= 12){
-            eatTime.innerHTML = isZero[1];
-        }else if( h >= 12 && h <= 18){
-            eatTime.innerHTML = isZero[2];
-        }else{
-            eatTime.innerHTML = isZero[0];
-        }
-    }else if( isFirst != 0){
-        if( h > 7 && h <= 12){
-            eatTime.innerHTML = isntZero[1];
-        }else if( h >= 12 && h <= 18){
-            eatTime.innerHTML = isntZero[2];
-        }else{
-            eatTime.innerHTML = isntZero[0];
-        }
-    }
-}
+// function toEatTime(){
+//     isFirst = new Date().getDay() % 2;
+//     h = new Date().getHours();
+//     isZero = ["06:55","12:20","18:05"];
+//     isntZero = ["06:55","12:10","17:55"];
+//     eatTime = document.getElementById("toEatMain");
+//     if( isFirst === 0){
+//         if( h > 7 && h <= 12){
+//             eatTime.innerHTML = isZero[1];
+//         }else if( h >= 12 && h <= 18){
+//             eatTime.innerHTML = isZero[2];
+//         }else{
+//             eatTime.innerHTML = isZero[0];
+//         }
+//     }else if( isFirst != 0){
+//         if( h > 7 && h <= 12){
+//             eatTime.innerHTML = isntZero[1];
+//         }else if( h >= 12 && h <= 18){
+//             eatTime.innerHTML = isntZero[2];
+//         }else{
+//             eatTime.innerHTML = isntZero[0];
+//         }
+//     }
+// }
 
 // 联系方式
 function callUs(){

@@ -130,6 +130,7 @@ function startTechyesBg(){
 }
 //bing背景
 function bingBg(){
+	clearInterval(bg.interval);
 	clearInterval(window.techyesBgInterval);
 	document.body.style.backgroundImage = "url(https://www.yangshangzhen.com/bing/wallpaper)";
 

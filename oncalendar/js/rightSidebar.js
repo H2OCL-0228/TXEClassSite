@@ -38,3 +38,8 @@ function closeHm(id){
     let a = document.getElementById(id);
     a.remove();
 }
+
+//切换班级
+function chooseClass(){
+    document.querySelector("#chooseClassList").style.display = "flex";
+}
