@@ -158,7 +158,7 @@ function bodyOnload(){
 function closeCover(){
     setTimeout(() => {
        document.getElementById("cover").style.display = "none"; 
-    }, 1);
+    }, 10000);
 }
 
 //通知气泡控制函数
