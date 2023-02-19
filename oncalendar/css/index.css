@@ -143,6 +143,7 @@ button{
     border:1px white solid ; border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
     display: flex;flex-shrink: 0;justify-content: center;align-items: center;
+    font-size: 2.5vw;
 }
 
 .buttonWidthSameAsHeight:hover{
@@ -223,24 +224,30 @@ button{
 
 /* 模态框样式 */
 .modalBox{
-    height: 70%;width: 60%;
-    background-color: rgba(255, 255, 255, 0.8);backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px #6e32323a;
+    height: 70%;width: 60%;text-shadow: none;
+    background-color: rgb(255, 255, 255);
     position: absolute;top: 50%;left: 50%;
     transform: translate(-50%,-50%);z-index:10;
-    border-radius: 20px;padding: 30px;padding-top: 50px;
+    border-radius: 20px;padding: 50px;padding-top: 50px;
     display: flex;flex-direction: column;align-items: center;
 }
 .modalTitle{
-    height: 35%;width: 100%;
-    display: flex;justify-content: center;align-items: center;
+    width: 100%;
+    display: flex;justify-content: flex-start;align-items: center;
+}
+.modalTitle > h1{
+    font-size: 3vw;
+    margin-top: 0px;
 }
 #modalImg{
     height: 80%;width: auto;
     position: relative;left: 3vw;
 }
 .modalMain{
-    width: 100%;flex: 1;background-color: rgba(112, 112, 112, 0.3);
+    width: 100%;flex: 1;background-color: rgb(255, 255, 255);
     border-radius: 10px;padding-bottom: 15px;
+    box-shadow: 0px 0px 10px #6e32323a;
 }
 
 /* 版权信息 */
@@ -394,6 +401,7 @@ button{
 /* blue:#2f90b9 云山蓝,green:#5dbe8a 蔻梢绿,yellow :#eed045 秋葵黄*/
 .color{
     height: 30px;width: 30px;border-radius: 100%;border:none;margin-left: 10px;transition: 0.1s;
+    border: 2px gray solid;
 }
 .color:hover{
     height: 30px;width: 55px;border-radius: 10px;

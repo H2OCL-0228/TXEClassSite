@@ -10,7 +10,7 @@
 <body onload="bodyOnload()">
 
     <!-- 加载动画 -->
-    <div id="cover">
+    <!-- <div id="cover">
         <div id="coverMain">
             <img src="./pictures/19calendar (1).png" id="coverImg" >
         </div>
@@ -19,7 +19,7 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 打开右侧侧边栏的按钮 -->
     <button class="openRightSideBarButton" id="openRightSideBarButton" onclick="openOrCloseRight()">
@@ -72,13 +72,14 @@
     <!-- 设置 -->
     <div class="modalBox" id="modalSettings">
         <button class="buttonWidthSameAsHeight" id="buttonCloseModal" onclick="closeModal('modalSettings')">
-            <img src="./pictures/guanbi.svg" class="inWsahButtonImg">
+            ×
         </button>
         <div class="modalTitle" id="settingsTitle">
-            <img src="./pictures/logodaizi.png" id="modalImg">
+            <h1 style="color:#FF5050">
+                设置和功能
+            </h1>
         </div>
         <div class="modalMain" id="settingsMain">
-            <h2  style="text-align:center;padding: 0;padding-bottom:10px;margin: 0;margin-bottom: 15px;border-bottom: 1px rgb(55,55,55) solid;">一九班历设置</h2>
             <div id="setTitle"> 颜色主题</div>
             <div id="setAction">
                 <button class="color" id = "red" onclick="color('#ff5050')"></button>
@@ -117,10 +118,12 @@
     <!-- 关于 -->
     <div class="modalBox" id="modalAbout">
         <button class="buttonWidthSameAsHeight" id="buttonCloseModal" onclick="closeModal('modalAbout')">
-            <img src="./pictures/guanbi.svg" class="inWsahButtonImg">
+            ×
         </button>
         <div class="modalTitle" id="settingsTitle">
-            <img src="./pictures/logodaizi.png" id="modalImg">
+            <h1 style="color:#FF5050">
+                关于和日志
+            </h1>
         </div>
         <div class="modalMain" id="aboutMain">
             <div id="verson">
@@ -178,6 +181,11 @@
             <div id="aboutAdd">
                 1、构建了高一课表接口，并进行了全年级课表的适配准备。
             </div>
+            <div id="verson">正式版v1.4.1 || Verson1.4.1</div>
+            <div id="aboutChange">
+                1、调整了设置界面和关于界面样式，减轻了系统负担<br>
+                2、支持晚课手动添加
+            </div>
         </div>
     </div>
 
@@ -219,12 +227,13 @@
                             <button onclick = "addCleanBlackboardStudent()" style="height:70%;width: 70%;background-color: #ffffff00;">添加</button>
                         </div>
                     </div>
+                    <!-- 这块儿之前是吃饭时间函数，换了功能懒得改id，就留下了 -->
                     <div class="sidebarNameBox" id="toEatBox">
                         <div class="sidebarNameBoxTitle" id="toEatTitle">
                             今日晚课
                         </div>
                         <div class="sidebarNameBoxMain" id="toEatMain">
-                            //
+                            <button onclick = "addNightClass()" style="height:70%;width: 70%;background-color: #ffffff00;">添加</button>
                         </div>
                     </div>
 					<!-- 响应式小屏幕提醒 -->
