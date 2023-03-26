@@ -8,7 +8,7 @@ html,body{
     overflow-y: hidden;overflow-x: hidden;
     transition-duration: 0.2s;
     background-size: cover;color:#424242;
-    background-image: url(https://www.yangshangzhen.com/bing/wallpaper);
+    background-image: url(https://bing.shangzhenyang.com/api/1080p);
     /* 调试 */
     /* background-color: rgb(255, 255, 255); */
     /* font-family: 思源宋体;font-weight: bold; */
