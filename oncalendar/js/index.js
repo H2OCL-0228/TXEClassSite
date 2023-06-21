@@ -34,7 +34,7 @@ function time(){
 
 //启动时间函数、吃饭计算函数
 function startTime(){
-    timeStart = setInterval(function(){time(),toEatTime()},1000);
+    timeStart = setInterval(function(){time()},1000);
 }
 
 //一言API 调用函数
@@ -102,7 +102,7 @@ function getList(indexs){
 
     //按照星期抽取课程表
     let temp = new Date();
-    let todayClass = cList[Number(temp.getDay())];
+    todayClass = cList[Number(temp.getDay())];
 
     //调试
     console.log(temp.getDay(),todayClass);
@@ -116,6 +116,7 @@ function getList(indexs){
 //开关模态框函数
 document.getElementById("modalSettings").style.display = "none";
 document.getElementById("modalAbout").style.display = "none";
+document.getElementById("changeClassBox").style.display = "none";
 function openModal(id){
     document.getElementById(id).style.display = "flex";
 }
@@ -158,7 +159,7 @@ function bodyOnload(){
 function closeCover(){
     setTimeout(() => {
        document.getElementById("cover").style.display = "none"; 
-    }, 10000);
+    }, 3000);
 }
 
 //通知气泡控制函数
@@ -167,6 +168,26 @@ temp.style.right = "-200px";
 function noticeByBoxForward(text){
     temp.style.right = "50px";
     temp.innerHTML = text; 
+}
+
+// 将课表填到换课窗口里
+function inChangeClass(){
+    ccInputs = document.getElementsByClassName('ccInput');
+    for(i = 0 ;i < ccInputs.length;i ++){
+        ccInputs[i].value = todayClass[i];
+    }
+}
+
+// 将修改过的课表保存为数组并重新加载
+function changedClass(){
+    ccInputs = document.getElementsByClassName('ccInput');
+    todayClass = [];
+    for(i = 0;i < ccInputs.length;i ++){
+        todayClass.push(ccInputs[i].value);
+    }
+    for( n = 0 ; n <= 8 ; n++ ){
+        document.getElementById("c" + n).innerHTML = todayClass[n];
+    }
 }
 
 //吃饭时间计算函数

@@ -651,3 +651,30 @@ button{
     cursor: pointer;
     background-color: #ff505036;
 }
+
+/* 换课模态框样式 */
+#changeClassMain{
+    display: flex;align-items: center;justify-content: center;
+    flex-direction: row;flex-wrap: wrap;
+}
+#changeClassMain > input{
+    height: 50px;width: 50px;
+    margin: 5px;font-size: 2vw;
+    text-align: center;
+}
+
+#ccSecTitle{
+    position: absolute;
+    top: 35vh;font-size: 1.6vw;
+}
+
+.modalMain > button{
+    position: absolute;
+    bottom: 23vh;
+    height: 6vh;width: 8vw;
+    font-size: 1.5vw;border-radius: 20px;
+}
+
+.modalMain > button:hover{
+    background-color: #FF5050;
+}

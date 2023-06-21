@@ -62,10 +62,38 @@
                 <img src="./pictures/class.svg" class="inRightImg" style="height: 60%;width: auto;">
                 <p class="inRightP">切换班级</p>
             </button>
+            <button class="inRightButton" id="changeClass" onclick="openModal('changeClassBox')">
+                <img src="./pictures/change.svg" class="inRightImg" style="height: 60%;width: auto;">
+                <p class="inRightP">换课功能</p>
+            </button>
         </div>
         <button class="about" id="about" onclick="openModal('modalAbout')">
             关于
         </button>
+    </div>
+
+    
+    <!-- 换课功能 -->
+    <div class = "modalBox" id="changeClassBox">
+        <button class="buttonWidthSameAsHeight" id="buttonCloseModal" onclick="closeModal('changeClassBox')" style="font-size:1.25vw;">✖</button>
+        <div class="modalTitle" id="changeClassTitle">
+            <h1 style="color:#FF5050">
+                课程更换
+            </h1>
+        </div>
+        <div class="modalMain" id="changeClassMain">
+            <div id="ccSecTitle">请输入课程名称并点击保存</div>
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <input type="text" class="ccInput">
+            <button onclick="changedClass(),closeModal('changeClassBox')">保存</button>
+        </div>
     </div>
 
 
@@ -186,6 +214,13 @@
                 1、调整了设置界面和关于界面样式，减轻了系统负担<br>
                 2、支持晚课手动添加
             </div>
+            <div id="verson">正式版v1.4.2 || Verson1.4.2</div>
+            <div id="aboutAdd">
+                1、增加了换课功能
+            </div>
+            <div id="aboutChange">
+                1、优化细节
+            </div>
         </div>
     </div>
 
@@ -261,7 +296,7 @@
                 <img src="./pictures/24gf-headset.svg"  class="inWsahButtonImg">
             </button>
             <div id="banBen">
-                Main Ver1.4.1
+                Main Ver1.4.2
             </div>
         </div>
     </div>

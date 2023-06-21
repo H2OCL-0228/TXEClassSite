@@ -75,9 +75,9 @@
     </div>
     <div class="top">
         <p class="inTop">年级:</p>
-        <button class="chooseGrade" onclick = "show('1'),unSee()" id = "but">高一年级</button>
-        <button class="chooseGrade" onclick = "show('2'),unSee()" id = "but1">高二年级</button>
-        <button class="chooseGrade" onclick = "show('3'),unSee()" id = "but2">高三年级</button>
+        <button class="chooseGrade" onclick = "stTime('1'),unSee()" id = "but">高一年级</button>
+        <button class="chooseGrade" onclick = "stTime('2'),unSee()" id = "but1">高二年级</button>
+        <button class="chooseGrade" onclick = "stTime('3'),unSee()" id = "but2">高三年级</button>
         <button class="chooseGrade" onclick = "history.go()">重新选择</button>
     </div>
     <div class="main">
@@ -121,9 +121,13 @@
                 var second = timediff % 60;
                 //输出还剩多少时间
                 document.getElementById("output").innerText = day + "天" + hour + "小时" + minute + "分钟" + second + "秒"; 
-                var intervals = setInterval(function(){show(grade)}, 1000);
                 if (timediff == 0) { return; }
             }
+            
+            function stTime(grade){
+                var intervals = setInterval(function(){show(grade)}, 1000);
+            }
+
            function unSee(){
                document.getElementById("but").style.display = "none";
                document.getElementById("but1").style.display = "none";
