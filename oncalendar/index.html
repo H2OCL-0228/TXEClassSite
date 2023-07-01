@@ -10,7 +10,7 @@
 <body onload="bodyOnload()">
 
     <!-- 加载动画 -->
-    <div id="cover">
+    <!-- <div id="cover">
         <div id="coverMain">
             <img src="./pictures/19calendar (1).png" id="coverImg" >
         </div>
@@ -19,7 +19,7 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 打开右侧侧边栏的按钮 -->
     <button class="openRightSideBarButton" id="openRightSideBarButton" onclick="openOrCloseRight()">
@@ -221,14 +221,21 @@
             <div id="aboutChange">
                 1、优化细节
             </div>
+            <div id="verson">正式版v1.5.0 || Verson1.5.0</div>
+            <div id="aboutChange">
+                1、重置了右侧主时钟和上面诗词显示的代码，优化性能，为后续更新做准备
+            </div>
+            <div id="aboutFix">
+                1、修复了选择班级界面的跑版问题
+            </div>
         </div>
     </div>
 
 
     <!-- 通知气泡 -->
-    <div class="noticeBox" id="noticeBox">
+    <!-- <div class="noticeBox" id="noticeBox">
         
-    </div>
+    </div> -->
 
     <div class="sidebar" id="sidebar">
     <div class="sidebarMain" id="sidebarMain">
@@ -272,11 +279,11 @@
                         </div>
                     </div>
 					<!-- 响应式小屏幕提醒 -->
-					<div class="sidebarNameBox" id="smallScreen">
+					<!-- <div class="sidebarNameBox" id="smallScreen">
 					    <div class="sidebarNameBoxMain" id="smallScreenMain" style="font-size: 20px;color:rgb(70,70,70);">
 								小屏功能不完善，请使用大屏
-					    </div>
-					</div>
+					    </div> 
+					</div> -->
                 </div>
             </div>
         </div>
@@ -301,15 +308,26 @@
         </div>
     </div>
 
+    <div id="rightTopBox">
+        <div style="display: inline-flex;flex-direction: column;align-items: flex-end;">
+            <div class="rightTopNotice" id="simplePoetry" onclick="oneSay()">
+                <span id="jinrishici-sentence">正在加载今日诗词....</span>
+            </div>
+            <div class="rightTopNotice" id="simplePoetry">
+                好好学习，天天向上！
+            </div>
+        </div>
+    </div>
+
+    <div class="mainTwo" id="right">
+        <!-- 主时钟 -->
+        <div id="timeBox"></div>
+    </div>
 
     <!-- 布置作业框 -->
     <div id="homeworks"></div>
-    <!-- 主时钟 -->
-    <div class="timeBox" id="timeBox"></div>
+    
     <!-- 右上角文案框 -->
-    <div class="simplePoetry" id="simplePoetry" onclick="oneSay()">
-        <!-- <span id="jinrishici-sentence">正在加载今日诗词....</span> -->
-    </div>
     <div class="banQuan" id="banQuan">
         <a id="poetryInfor"></a>
         <a id="bgInfor"></a>

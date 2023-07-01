@@ -29,50 +29,54 @@ function color(color){
 //焦点模式
 function showFocus(){
     document.getElementById("sidebarMain").style.visibility = "hidden";
-    document.getElementById("timeBox").style.bottom = "50%";
-    document.getElementById("timeBox").style.right = "50%";
-    document.getElementById("timeBox").style.transform = "translate(50%,50%)";
-    document.getElementById("timeBox").style.width = "50%";
-    document.getElementById("timeBox").style.height = "30%";
-    document.getElementById("noticeBox").style.display = "none";
+    // document.getElementById("timeBox").style.bottom = "50%";
+    // document.getElementById("timeBox").style.right = "50%";
+    // document.getElementById("timeBox").style.transform = "translate(50%,50%)";
+    // document.getElementById("timeBox").style.width = "50%";
+    // document.getElementById("timeBox").style.height = "30%";
+    // document.getElementById("noticeBox").style.display = "none";
+	document.getElementById("right").style.width = "100%";
+	document.getElementById("right").style.justifyContent = "center";
+	document.getElementById("timeBox").style.marginRight = "0px";
+	document.getElementById("timeBox").style.fontSize = "12vw";
     document.getElementById("homeworks").style.position = "absolute"
     document.getElementById("homeworks").style.left = "0px"
     document.getElementById("homeworks").style.width = "20%"
+	document.getElementById("noticeBox").style.display = "none";
 }
 
 function showNormal(){
     document.getElementById("sidebarMain").style.visibility = "visible";
-    document.getElementById("timeBox").style.bottom = "80px";
-    document.getElementById("timeBox").style.right = "60px";
-    document.getElementById("timeBox").style.transform = "translate(0%,0%)";
-    document.getElementById("timeBox").style.width = "35%";
-    document.getElementById("timeBox").style.height = "25%";
+	document.getElementById("right").style.width = "auto";
+	document.getElementById("right").style.justifyContent = "flex-end";
+	document.getElementById("timeBox").style.marginRight = "60px";
+	document.getElementById("timeBox").style.fontSize = "10vw";
     document.getElementById("homeworks").style.removeProperty("position");
-	document.getElementById("noticeBox").style.display = "flex";
+
 	if(windowWidth >= 650){
-		document.getElementById("noticeBox").style.display = "flex";
+		document.getElementById("rightTopBox").style.display = "flex";
 	}else{
-		document.getElementById("noticeBox").style.display = "none";
+		document.getElementById("rightTopBox").style.display = "none";
 	}
 }
 
 // 解决标语框响应式的大问题
-window.addEventListener("resize",function(){
-	let windowWidth = Number(document.documentElement.clientWidth);
-	if(windowWidth >= 650){
-		document.getElementById("noticeBox").style.display = "flex";
-		document.getElementById("smallScreen").style.display = "none";
-		a = document.getElementById("timeBox");
-		a.style.display = "flex";
-		a.style.height = "25%";
-		a.style.width = "35%";
-		// a.style.fontSize = "130px";
-	}else{
-		document.getElementById("noticeBox").style.display = "none";
-		document.getElementById("smallScreen").style.display = "flex";
-		document.getElementById("timeBox").style.display = "none";
-	}
-})
+// window.addEventListener("resize",function(){
+// 	let windowWidth = Number(document.documentElement.clientWidth);
+// 	if(windowWidth >= 650){
+// 		document.getElementById("noticeBox").style.display = "flex";
+// 		document.getElementById("smallScreen").style.display = "none";
+// 		a = document.getElementById("timeBox");
+// 		a.style.display = "flex";
+// 		a.style.height = "25%";
+// 		a.style.width = "35%";
+// 		// a.style.fontSize = "130px";
+// 	}else{
+// 		document.getElementById("noticeBox").style.display = "none";
+// 		document.getElementById("smallScreen").style.display = "flex";
+// 		document.getElementById("timeBox").style.display = "none";
+// 	}
+// })
 
 //小屏幕使用提醒
 function smallScreen(){

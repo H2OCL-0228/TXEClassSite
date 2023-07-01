@@ -1,13 +1,19 @@
-html,body{
+html,
+body {
     /* 公祭日黑色蒙版 */
     /* filter: grayscale(100%); */
     /* filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); */
-    height: 100%;width: 100%;
-    display: flex;align-items: center;
-    margin: 0px;padding: 0px;
-    overflow-y: hidden;overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
     transition-duration: 0.2s;
-    background-size: cover;color:#424242;
+    background-size: cover;
+    color: #424242;
     background-image: url(https://bing.shangzhenyang.com/api/1080p);
     /* 调试 */
     /* background-color: rgb(255, 255, 255); */
@@ -26,154 +32,242 @@ html,body{
 } */
 
 /* 侧边栏整体排版 */
-#sidebar{
+#sidebar {
     /* background-color: rgba(0, 0, 0, 0.5); */
-    height: 100%;width: 25%;
-    margin: 0px;padding: 0px;
-    display: flex;flex-direction: column;align-items: center;
+    z-index: 6;
+    height: 100%;
+    width: 25%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.sidebarMain{
-    width: 100%;display: flex;flex: 1;flex-direction: column;
+
+.sidebarMain {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding-left: 40px;
 }
 
 /* 鼠标样式改变 */
-button{
+button {
     cursor: pointer;
 }
 
 /* 背景蒙版 */
-body>div{
-    z-index:3;
+body>div {
+    z-index: 3;
 }
-html::after{    
+
+html::after {
     content: "";
     position: fixed;
-    top: 0; bottom: 0; left: 0; right: 0; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: #00000036;
 }
 
 /* 最上面的日期框 */
-#dateBox{
+#dateBox {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
-    height: 15%;width: 90%;
-    border-radius: 10px;margin-top: 3vh;
-    display: flex;flex-shrink: 0;align-items: center;
+    height: 15%;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 3vh;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
     flex-direction: column;
 }
 
 /* 日期框里的东西 */
-#weekDay{
-    background-color: rgba(255, 80, 80, 0.5);color:white;
-    height: 70%;width:100%;display: flex;
-    justify-content: center;align-items: center;
-    border-top-left-radius: 10px;border-top-right-radius: 10px;
-    font-size: 3.5vw;font-weight: bold;
+#weekDay {
+    background-color: rgba(255, 80, 80, 0.5);
+    color: white;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 3.5vw;
+    font-weight: bold;
 }
-#month{
-    flex: 1;width: 100%;
-    display: flex;justify-content: center;align-items: center;
+
+#month {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5vw;
 }
 
 /* 下面的其他元素整体布局 */
-#sidebarBoxTwo{
-    display: flex;flex: 1;
-    width: 90%;padding-top: 2.5vh;
+#sidebarBoxTwo {
+    display: flex;
+    flex: 1;
+    width: 90%;
+    padding-top: 2.5vh;
 }
 
 /* 侧边栏的footer */
-#sidebarFooter{
-    margin: 0px;padding-top: 0px;
+#sidebarFooter {
+    margin: 0px;
+    padding-top: 0px;
     width: 90%;
     padding-bottom: 2.5vh;
-    display: flex;align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 /* sidebarBoxTwo里面的元素 课程表*/
-#classList{
+#classList {
     background-color: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(10px);
-    width: 20%;height: 90%;
-    border-radius: 10px;margin-left: 20px;padding-top: 20px;
-    display: flex;flex-direction: column;flex-shrink: 0;
+    width: 20%;
+    height: 90%;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
 }
-.classes{
-    height: 10%;width: 90%;color:rgb(255, 255, 255);
+
+.classes {
+    height: 10%;
+    width: 90%;
+    color: rgb(255, 255, 255);
     border-top: 2px #FF5050 solid;
-    font-size: 2vw;display: flex;justify-content: center;align-items: center;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 第三个侧边栏框（内含值日生和晚修报名） */
-#sidebarBoxThree{
-    height: 95%;width: auto;padding-right: 10px;padding-left: 10px;
-    display: flex;flex: 1;flex-direction: column;align-items: center;
+#sidebarBoxThree {
+    height: 95%;
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* 姓名框 */
-.sidebarNameBox{
+.sidebarNameBox {
     background-color: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(10px);
-    height: 20%;width: 95%;
-    border-radius: 10px;margin-top: 10px;
-    display: flex;flex-direction: column;align-items: center;
+    height: 20%;
+    width: 95%;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.sidebarNameBoxTitle{
+.sidebarNameBoxTitle {
     background-color: rgba(255, 80, 80, 0.5);
-    height: 45%;width: 100%;font-size: 1.5vw;color:white;
-    border-top-left-radius: 10px;border-top-right-radius: 10px;
-    display: flex;justify-content: center;align-items: center;
+    height: 45%;
+    width: 100%;
+    font-size: 1.5vw;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sidebarNameBoxMain{
-    width: 100%;flex: 1;border:none;outline: none;font-size: 2.2vw;text-align: center;
-    border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;display: flex;
-    justify-content: center;align-items:center;color:white;font-weight: bold;
+.sidebarNameBoxMain {
+    width: 100%;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 2.2vw;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
 }
 
 /* 按钮样式 */
-button{
-    display: flex;justify-content: center;align-items: center;border: none;
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
 }
-.buttonWidthSameAsHeight{
-    height: 2.6vw;width: 2.6vw;margin-left: 10px;
-    border:1px white solid ; border-radius: 10px;
+
+.buttonWidthSameAsHeight {
+    height: 2.6vw;
+    width: 2.6vw;
+    margin-left: 10px;
+    border: 1px white solid;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.4);
-    display: flex;flex-shrink: 0;justify-content: center;align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5vw;
 }
 
-.buttonWidthSameAsHeight:hover{
+.buttonWidthSameAsHeight:hover {
     animation: buttonWsahChange 0.1s forwards;
 }
-@keyframes buttonWsahChange{
-    to{
+
+@keyframes buttonWsahChange {
+    to {
         background-color: #FF5050;
-        border:0px;height: 2.6vw;width: 2.6vw;
+        border: 0px;
+        height: 2.6vw;
+        width: 2.6vw;
     }
 }
-#buttonCloseModal{
+
+#buttonCloseModal {
     position: absolute;
-    top: 2.2vw;right: 2.2vw;
+    top: 2.2vw;
+    right: 2.2vw;
 }
 
 /* 按钮中的图片样式 */
-.inWsahButtonImg{
-    height: 100%;width: 100%;
+.inWsahButtonImg {
+    height: 100%;
+    width: 100%;
 }
 
 /* 版权信息 */
-#banBen{
-    height: 100%;width: auto;color:white;
-    font-size: 1vw;padding-left: 2vw;
-    display: flex;align-items: center;
+#banBen {
+    height: 100%;
+    width: auto;
+    color: white;
+    font-size: 1vw;
+    padding-left: 2vw;
+    display: flex;
+    align-items: center;
 }
 
 /* 主时钟显示 */
-#timeBox{
+/* #timeBox{
     display: flex;justify-content: center;align-items: center;
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);transition: 0.3s;
@@ -182,174 +276,270 @@ button{
     font-size: 10vw;font-weight: bold;
     position: absolute;
     bottom:10%;right: 60px;
-}
-
-/* 极简诗词显示 */
-#simplePoetry{
-    height: 3vw;width: auto;font-size: 20px;font-weight: bold;
-    color:rgba(255, 255, 255, 0.8);
-    padding-left: 20px;padding-right: 20px;
-    position: absolute;top:3vw;right: 50px;
-    display: flex;justify-content: center;align-items: center;
-    font-size:1.2vw;border-radius: 10px;background-color: rgba(255, 255, 255,0.5);
-    backdrop-filter: blur(10px);
-}
-#simplePoetry:hover{
-    animation: poetryChange 0.1s forwards;
-}
-@keyframes poetryChange{
-    to{
-        height: 3.2vw;
-    }
-}
+} */
 
 /* 通知气泡样式（复制的一言） */
-#noticeBox{
-    height: 3vw;width: auto;font-size: 20px;font-weight: bold;
-    color:rgba(255, 255, 255, 0.8);transition-duration: 1s;
-    padding-left: 20px;padding-right: 20px;
-    position: absolute;top:7vw;right: 50px;
-    display: flex;justify-content: center;align-items: center;
-    font-size: 1.2vw;border-radius: 10px;background-color: rgba(255, 255, 255,0.5);
+#noticeBox {
+    height: 3vw;
+    width: auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    transition-duration: 1s;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    top: 7vw;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
 }
-#noticeBox:hover{
+
+#noticeBox:hover {
     animation: poetryChange 0.1s forwards;
 }
-@keyframes poetryChange{
-    to{
+
+@keyframes poetryChange {
+    to {
         height: 3.2vw;
     }
 }
 
 /* 模态框样式 */
-.modalBox{
+.modalBox {
     box-shadow: 0px 0px 10px #6e32323a;
-    height: 70%;width: 60%;text-shadow: none;
+    height: 70%;
+    width: 60%;
+    text-shadow: none;
     background-color: rgb(255, 255, 255);
-    position: absolute;top: 50%;left: 50%;
-    transform: translate(-50%,-50%);z-index:10;
-    border-radius: 20px;padding: 50px;padding-top: 50px;
-    display: flex;flex-direction: column;align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border-radius: 20px;
+    padding: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.modalTitle{
+
+.modalTitle {
     width: 100%;
-    display: flex;justify-content: flex-start;align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
-.modalTitle > h1{
+
+.modalTitle>h1 {
     font-size: 3vw;
     margin-top: 0px;
 }
-#modalImg{
-    height: 80%;width: auto;
-    position: relative;left: 3vw;
+
+#modalImg {
+    height: 80%;
+    width: auto;
+    position: relative;
+    left: 3vw;
 }
-.modalMain{
-    width: 100%;flex: 1;background-color: rgb(255, 255, 255);
-    border-radius: 10px;padding-bottom: 15px;
+
+.modalMain {
+    width: 100%;
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding-bottom: 15px;
     box-shadow: 0px 0px 10px #6e32323a;
 }
 
 /* 版权信息 */
-#banQuan{
-    height: auto;width: auto;color:rgba(255, 255, 255, 0.5);font-size:.7vw;
-    position: absolute;bottom: 15px;right: 50px;text-align: right;padding: 5px;border-radius: 5px;
+#banQuan {
+    height: auto;
+    width: auto;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: .7vw;
+    position: absolute;
+    bottom: 15px;
+    right: 50px;
+    text-align: right;
+    padding: 5px;
+    border-radius: 5px;
 }
-#banQuan:hover{
-    background-color: rgba(255, 255, 255,0.5);backdrop-filter: blur(10px);
+
+#banQuan:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
     color: black;
 }
 
 /* 右侧侧边栏开启按钮 */
-#openRightSideBarButton{
-    height: 80px;width: 20px;border-radius: 10px;
-    border-top-right-radius: 0px;border-bottom-right-radius: 0px;
-    border: 0;padding: 0;margin: 0;transition: 0.1s;
-    display: flex;justify-content: center;align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);backdrop-filter: blur(10px);
-    position: absolute;top: 50%;right: 0px;transform: translate(0%,-100%);
-	z-index: 8;
+#openRightSideBarButton {
+    height: 80px;
+    width: 20px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    transition: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(0%, -100%);
+    z-index: 8;
 }
 
-#openRightSideBarButton:hover{
+#openRightSideBarButton:hover {
     width: 30px;
 }
 
-#openRightSideBarButton:active{
-    width: 30px;border: 2px white solid;border-right: none;
+#openRightSideBarButton:active {
+    width: 30px;
+    border: 2px white solid;
+    border-right: none;
 }
 
 /* 右侧侧边栏 */
-#rightSideBar{
-    width: 80px;height: 100%;background-color: rgba(0, 0, 0, 0.835);color:white;
-    margin: 0;padding: 0;box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5);transition: 0.1s;
-    position: absolute;top: 0px;right: 0px;z-index: 6;backdrop-filter: blur(10px);
+#rightSideBar {
+    width: 80px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.835);
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.1s;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 6;
+    backdrop-filter: blur(10px);
 }
 
 /* 右侧侧边栏里面的大框 */
-#inRight{
-    height: 100%;width: 100%;margin: 0;padding: 0;/*border:2px blue solid;*/
-    display: flex;flex-direction: column;align-items: center;
+#inRight {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /*border:2px blue solid;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* 右侧侧边栏按钮 */
-.inRightButton{
-    height: 80px;width: 100%;background-color: #FFFFFF00;
-    padding: 10px;margin: 0;margin-top: 10px;margin-bottom: 10px;
-    border: none;display: flex;flex-direction: column;align-items: center;
+.inRightButton {
+    height: 80px;
+    width: 100%;
+    background-color: #FFFFFF00;
+    padding: 10px;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.inRightButton:hover{
+.inRightButton:hover {
     background-color: rgba(145, 145, 145, 0.3);
 }
 
-.inRightImg{
-    height: 75%;width: auto;position: relative;top:10px;
+.inRightImg {
+    height: 75%;
+    width: auto;
+    position: relative;
+    top: 10px;
 }
 
-.inRightP{
-    height: 12px;width: 100%;text-align: center;color:white;
+.inRightP {
+    height: 12px;
+    width: 100%;
+    text-align: center;
+    color: white;
     font-size: 12px;
 }
 
 /* 关于 */
-#about{
-    background-color: #ffffff00;border:none;font-size: 12px;height: 12px;width: 100%;
-    position: absolute;bottom: 20px;color:white;
+#about {
+    background-color: #ffffff00;
+    border: none;
+    font-size: 12px;
+    height: 12px;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    color: white;
 }
 
 /* 关于模态框 */
 
-.modalMain{
-    display: flex;flex-direction: column;
-    overflow-y: auto;flex-shrink: 0;
+.modalMain {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-shrink: 0;
 }
 
-#aboutMain{
-    align-items: center;text-shadow: none;
+#aboutMain {
+    align-items: center;
+    text-shadow: none;
 }
 
-#verson{
-    height: 30px;width: 90%;border-bottom: 1px rgb(55, 55, 55) solid;margin-top: 20px;
-    font-size: 1.35vw;display: flex;justify-content: center;align-items: center;padding-bottom: 10px;
+#verson {
+    height: 30px;
+    width: 90%;
+    border-bottom: 1px rgb(55, 55, 55) solid;
+    margin-top: 20px;
+    font-size: 1.35vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
 }
 
-#aboutAdd{
-    height: auto;width: 85%;border-radius: 10px;
+#aboutAdd {
+    height: auto;
+    width: 85%;
+    border-radius: 10px;
     background-color: rgba(0, 200, 0, 0.5);
-    padding: 5px;margin-top: 10px;font-size: 1vw;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1vw;
 }
 
-#aboutChange{
-    height: auto;width: 85%;border-radius: 10px;
+#aboutChange {
+    height: auto;
+    width: 85%;
+    border-radius: 10px;
     background-color: rgba(255, 60, 60, 0.5);
-    padding: 5px;margin-top: 10px;font-size: 1vw;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1vw;
 }
 
-#aboutFix{
-    height: auto;width: 85%;border-radius: 10px;
+#aboutFix {
+    height: auto;
+    width: 85%;
+    border-radius: 10px;
     background-color: rgba(60, 200, 255, 0.5);
-    padding: 5px;margin-top: 10px;font-size: 1vw;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1vw;
 }
 
 /* 滚动条 
@@ -361,154 +551,252 @@ button{
 } */
 
 /* 布置作业 */
-#homeworks{
-    height: 100%;width: 25%;transition: 0.2s;
-    display: flex;flex-direction: column;padding: 20px;margin: 0;
-    align-items: center;padding-top: 40px;z-index:2;
+#homeworks {
+    height: 100%;
+    width: 25%;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0;
+    align-items: center;
+    padding-top: 40px;
 }
 
-.homework{
-    height: auto;width: 90%;background-color: rgba(255, 233, 110, 0.5);
-    padding: 10px;margin-top: 15px;display: flex;flex-direction: column;
-    border-radius: 15px;box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);transition: 0.2s;
+.homework {
+    height: auto;
+    width: 90%;
+    background-color: rgba(255, 233, 110, 0.5);
+    padding: 10px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: 0.2s;
 }
-.homeworkTitle{
-    height: 25px;width: 100%;font-size: 23px;font-weight: bold;padding-bottom: 5px;border-bottom: 1px rgb( 55 , 55 , 55 ) solid;
+
+.homeworkTitle {
+    height: 25px;
+    width: 100%;
+    font-size: 23px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px rgb(55, 55, 55) solid;
 }
-.homeworkMain{
-    height: auto;width: 100%;font-size: 18px;margin-top: 5px;
+
+.homeworkMain {
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 5px;
 }
-.closeHomework{
-    height: auto;width: auto;border: 0;background-color: #FFFFFF00;
-    position: absolute; top:15px;right: 10px;color:rgb(0, 0, 0);font-weight: bold;
+
+.closeHomework {
+    height: auto;
+    width: auto;
+    border: 0;
+    background-color: #FFFFFF00;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 /* 设置 */
-#settingsMain{
-    display: flex;flex-direction: column;padding: 15px;overflow-x: hidden;overflow-y: auto;
-    color:#424242;text-shadow: none;
+#settingsMain {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #424242;
+    text-shadow: none;
 }
 
-#setTitle{
-    height: 30px;width: 100%;font-size: 1.2vw;padding: 5px;margin:0;margin-bottom: 10px;
+#setTitle {
+    height: 30px;
+    width: 100%;
+    font-size: 1.2vw;
+    padding: 5px;
+    margin: 0;
+    margin-bottom: 10px;
 }
-#setAction{
-    height: auto;width: 100%;margin-bottom: 10px;display: flex;flex-direction: row;
+
+#setAction {
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 /* 颜色主题按钮 */
 /* blue:#2f90b9 云山蓝,green:#5dbe8a 蔻梢绿,yellow :#eed045 秋葵黄*/
-.color{
-    height: 30px;width: 30px;border-radius: 100%;border:none;margin-left: 10px;transition: 0.1s;
+.color {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: none;
+    margin-left: 10px;
+    transition: 0.1s;
     border: 2px gray solid;
 }
-.color:hover{
-    height: 30px;width: 55px;border-radius: 10px;
+
+.color:hover {
+    height: 30px;
+    width: 55px;
+    border-radius: 10px;
 }
-.color:active{
+
+.color:active {
     transition: none;
-    border:2px white solid;
+    border: 2px white solid;
 }
-#red{
+
+#red {
     background-color: #ff5050;
 }
-#blue{
+
+#blue {
     background-color: #2f90b9;
 }
-#green{
+
+#green {
     background-color: #5dbe8a;
 }
-#yellow{
+
+#yellow {
     background-color: #eed045;
 }
-#white{
+
+#white {
     background-color: #ffffff;
 }
 
 /* 显示风格按钮 */
-.showFunc{
-    height: 100px;width: 130px;border-radius: 10px;border:1px rgb( 55 , 55 , 55 ) solid;
-    display: flex;justify-content: center;align-items: center;background-color: #FFFFFF00;
-    padding: 10px;margin: 0;margin-left: 10px;transition: 0.1s;
+.showFunc {
+    height: 100px;
+    width: 130px;
+    border-radius: 10px;
+    border: 1px rgb(55, 55, 55) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF00;
+    padding: 10px;
+    margin: 0;
+    margin-left: 10px;
+    transition: 0.1s;
 }
-.showFunc:hover{
-    background-color: #ffffff60;border: 2px gray solid;
+
+.showFunc:hover {
+    background-color: #ffffff60;
+    border: 2px gray solid;
 }
-.showFunc:active{
-    height: 95px;width: 125px;
+
+.showFunc:active {
+    height: 95px;
+    width: 125px;
 }
 
 
 /* 响应式 */
-@media screen and (max-width:600px){
-    body,html{
-        overflow-y: hidden;overflow-x: hidden;
+@media screen and (max-width:600px) {
+
+    body,
+    html {
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
-    #weekDay{
+
+    #weekDay {
         font-size: 13vw;
     }
-    #month{
+
+    #month {
         font-size: 3vw;
     }
-    .classes{
+
+    .classes {
         font-size: 8vw;
     }
-    .sidebarNameBoxTitle{
+
+    .sidebarNameBoxTitle {
         font-size: 7vw;
     }
-    .sidebarNameBoxMain{
-        font-size:6vw;
+
+    .sidebarNameBoxMain {
+        font-size: 6vw;
     }
-	body{
-		background-size: auto;
-	}
-	#sidebar{
-		width: 100%;
-	}
-	#sideBarMain{
-		display: flex;
-		align-items: center;
-	}	
-	#timeBox{
-		padding-left: 20px;padding-right: 20px;
-		height: 130px;
-		width: auto;
-		font-size: 90px;
-	}
-	#banQuan,#banBen,#timeBox,#homeworks,#simplePoetry,#noticeBox,.modalTitle{
-		display: none;
-	}
-	h2{
-		font-size: 20px;
-	}
-	.modalBox{
-		height: 80%;width: 80%;
-	}
-	#setTitle{
-		font-size: 23px;
-	}
+
+    body {
+        background-size: auto;
+    }
+
+    #sidebar {
+        width: 100%;
+    }
+
+    #sideBarMain {
+        display: flex;
+        align-items: center;
+    }
+
+    #timeBox {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 130px;
+        width: auto;
+        font-size: 90px;
+    }
+
+    #banQuan,
+    #banBen,
+    #timeBox,
+    #homeworks,
+    #simplePoetry,
+    #noticeBox,
+    .modalTitle {
+        display: none;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .modalBox {
+        height: 80%;
+        width: 80%;
+    }
+
+    #setTitle {
+        font-size: 23px;
+    }
 }
 
 
 /* 设置里的按钮 */
-.setButton{
+.setButton {
     font-size: 1.3vw;
     padding: 10px;
     border-radius: 5px;
     margin-left: 10px;
     transition: .1s;
 }
-.setButton:hover{
+
+.setButton:hover {
     transform: scale(1.05);
 }
 
-.setButton:active{
+.setButton:active {
     transform: scale(1);
 }
 
 /* 加载动画 */
-#cover{
+#cover {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -520,16 +808,17 @@ button{
     flex-direction: column;
 }
 
-#coverMain{
+#coverMain {
     height: 35%;
     padding: 20px;
 }
 
-#coverImg{
-    height: 80%;width: auto;
+#coverImg {
+    height: 80%;
+    width: auto;
 }
 
-#kuang{
+#kuang {
     height: 25px;
     width: 50%;
     border: 1.5px black solid;
@@ -537,7 +826,7 @@ button{
     padding: 5px;
 }
 
-#tiao{
+#tiao {
     height: 100%;
     width: 0%;
     background-color: #FF5050;
@@ -545,20 +834,21 @@ button{
     animation: tiaoChange 10s forwards;
 }
 
-@keyframes tiaoChange{
-    to{
+@keyframes tiaoChange {
+    to {
         width: 100%;
     }
 }
 
 /* 课程表选择器 */
-#chooseClassList{
+#chooseClassList {
     background-color: white;
     height: 75%;
     width: 70%;
     position: absolute;
-    top:50%;right: 50%;
-    transform: translate(50%,-50%);
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
     z-index: 10;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.329);
@@ -566,7 +856,7 @@ button{
     flex-direction: row;
 }
 
-#chooseLeft{
+#chooseLeft {
     height: 100%;
     width: 35%;
     border-radius: 10px;
@@ -576,13 +866,13 @@ button{
     align-items: center;
 }
 
-#chooseLogo{
+#chooseLogo {
     width: 60%;
     height: auto;
     margin-bottom: 50px;
 }
 
-#chooseLeft>h2{
+#chooseLeft>h2 {
     color: #ff5050;
     text-shadow: 0px 0px 3px #ff505036;
     font-size: 2vw;
@@ -590,7 +880,7 @@ button{
     margin: 0px;
 }
 
-#chooseLeft>h3{
+#chooseLeft>h3 {
     font-size: 1.5vw;
     margin: 0px;
     padding-left: 20px;
@@ -598,7 +888,7 @@ button{
     color: rgba(150, 150, 150, 0.418);
 }
 
-#chooseRight{
+#chooseRight {
     width: 65%;
     height: 100%;
     border-radius: 10px;
@@ -610,19 +900,20 @@ button{
     color: rgb(150, 150, 150);
 }
 
-#chooseRight>h1{
+#chooseRight>h1 {
     color: #ff5050;
     margin: 0px;
     margin-top: 20px;
     font-size: 2.5vw;
 }
-#chooseRight>p{
+
+#chooseRight>p {
     margin: 0px;
     margin-top: 8px;
     font-size: 1vw;
 }
 
-#chooseMain{
+#chooseMain {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -630,13 +921,14 @@ button{
     margin-top: 10px;
     padding: 10px;
     overflow: auto;
-    height: 75%;
+    height: 0;
+    flex:.88;
     width: 95%;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.164); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.164);
 }
 
-.chooseButton{
+.chooseButton {
     flex-shrink: 0;
     font-size: 1.25vw;
     padding-left: 15px;
@@ -647,34 +939,121 @@ button{
     border-top: 1px gray solid;
 }
 
-.chooseButton:hover{
+.chooseButton:hover {
     cursor: pointer;
     background-color: #ff505036;
 }
 
 /* 换课模态框样式 */
-#changeClassMain{
-    display: flex;align-items: center;justify-content: center;
-    flex-direction: row;flex-wrap: wrap;
+#changeClassMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-#changeClassMain > input{
-    height: 50px;width: 50px;
-    margin: 5px;font-size: 2vw;
+
+#changeClassMain>input {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    font-size: 2vw;
     text-align: center;
 }
 
-#ccSecTitle{
+#ccSecTitle {
     position: absolute;
-    top: 35vh;font-size: 1.6vw;
+    top: 35vh;
+    font-size: 1.6vw;
 }
 
-.modalMain > button{
+.modalMain>button {
     position: absolute;
     bottom: 23vh;
-    height: 6vh;width: 8vw;
-    font-size: 1.5vw;border-radius: 20px;
+    height: 6vh;
+    width: 8vw;
+    font-size: 1.5vw;
+    border-radius: 20px;
 }
 
-.modalMain > button:hover{
+.modalMain>button:hover {
     background-color: #FF5050;
+}
+
+/* redev 右侧 */
+.mainTwo {
+    pointer-events: none;
+    height: 100%;
+    width: 0 auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index:1;
+}
+
+
+#timeBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    height: auto;
+    width: auto;
+    border-radius: 25px;
+    color: #ffffff;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: 10vw;
+    font-weight: bold;
+    margin-bottom: 85px;
+    margin-right: 60px;
+}
+
+#rightTopBox {
+    width: auto;
+    background-color: none;
+    padding-top: 30px;
+    text-align: right;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 5;
+}
+
+/* 极简诗词显示 */
+.rightTopNotice {
+    height: 3vw;
+    width: auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 60px;
+    font-size: 1.2vw;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.rightTopNotice:hover {
+    animation: poetryChange 0.1s forwards;
+}
+
+@keyframes poetryChange {
+    to {
+        height: 3.2vw;
+    }
 }
