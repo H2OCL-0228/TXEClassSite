@@ -6,7 +6,7 @@ function color(color){
     document.getElementById("toEatTitle").style.backgroundColor = color + '90';
     document.getElementById("timeBox").style.backgroundColor = color + '40';
     document.getElementById("simplePoetry").style.backgroundColor = color + '40';
-    document.getElementById("noticeBox").style.backgroundColor = color + '40';
+    document.getElementById("simpleNotice").style.backgroundColor = color + '40';
     for( i = 0 ; i <= 8 ; i ++){
         a = 'c' + i;console.log(a);
         // document.getElementById(a).style.borderBottom = "1px " + color + " solid";
@@ -34,7 +34,7 @@ function showFocus(){
     // document.getElementById("timeBox").style.transform = "translate(50%,50%)";
     // document.getElementById("timeBox").style.width = "50%";
     // document.getElementById("timeBox").style.height = "30%";
-    // document.getElementById("noticeBox").style.display = "none";
+    // document.getElementById("simpleNotice").style.display = "none";
 	document.getElementById("right").style.width = "100%";
 	document.getElementById("right").style.justifyContent = "center";
 	document.getElementById("timeBox").style.marginRight = "0px";
@@ -42,7 +42,7 @@ function showFocus(){
     document.getElementById("homeworks").style.position = "absolute"
     document.getElementById("homeworks").style.left = "0px"
     document.getElementById("homeworks").style.width = "20%"
-	document.getElementById("noticeBox").style.display = "none";
+	document.getElementById("simpleNotice").style.display = "none";
 }
 
 function showNormal(){
@@ -64,7 +64,7 @@ function showNormal(){
 // window.addEventListener("resize",function(){
 // 	let windowWidth = Number(document.documentElement.clientWidth);
 // 	if(windowWidth >= 650){
-// 		document.getElementById("noticeBox").style.display = "flex";
+// 		document.getElementById("simpleNotice").style.display = "flex";
 // 		document.getElementById("smallScreen").style.display = "none";
 // 		a = document.getElementById("timeBox");
 // 		a.style.display = "flex";
@@ -72,7 +72,7 @@ function showNormal(){
 // 		a.style.width = "35%";
 // 		// a.style.fontSize = "130px";
 // 	}else{
-// 		document.getElementById("noticeBox").style.display = "none";
+// 		document.getElementById("simpleNotice").style.display = "none";
 // 		document.getElementById("smallScreen").style.display = "flex";
 // 		document.getElementById("timeBox").style.display = "none";
 // 	}
