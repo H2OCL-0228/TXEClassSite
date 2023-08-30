@@ -12,7 +12,7 @@ function openpage(num){
     "./onwoodfish/index.html",
     "./about.html",
   ]
-  window.location.href = hrefList[num];
+  window.open(hrefList[num]);
 }
 
 // function open(){
