@@ -20,17 +20,19 @@ function getChooseTwo(buttonNum){
 
 function separationLaw(){
     
+    //初始化详细信息窗口
+    document.getElementById("detailDataOut").innerHTML = "";
     
-        //定义总数
-        let allCount = 0;
+    //定义总数
+    let allCount = 0;
     
-        //定义隐性纯合子计数
-        let implicitQuantity = 0;
+    //定义隐性纯合子计数
+    let implicitQuantity = 0;
     
-        //循环计算
-        //定义循环次数
-        let times = Number(document.getElementById("InputOne").value);
-        let numberOfCycles = times <= 5000 ? times : 5000 ; 
+    //循环计算
+    //定义循环次数
+    let times = Number(document.getElementById("InputOne").value);
+    let numberOfCycles = times <= 5000 ? times : 5000 ; 
 
     for( i = 0 ; i < numberOfCycles ; i ++ ){
 

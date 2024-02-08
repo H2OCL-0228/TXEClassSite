@@ -32,6 +32,10 @@ function addMdFree(times,nums){
 
 
 function freeCombinationLaw() {
+
+    //初始化详细信息窗口
+    document.getElementById("detailDataOut2").innerHTML = "";
+
     //定义父本和母本
     let mom = document.getElementById("freeMom").innerHTML;
     let dad = document.getElementById("freeDad").innerHTML;
