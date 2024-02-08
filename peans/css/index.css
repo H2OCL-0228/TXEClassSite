@@ -1,0 +1,390 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow-y: hidden;
+}
+
+div{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+}
+
+li{
+    margin: 0;
+}
+
+#backPicture{
+    height: 65%;
+    width: auto;
+    position: absolute;
+    top:20%;
+    right: 20%;
+}
+
+/* 侧边栏 */
+#sidebarBox{
+    /* border: 1px red solid; */
+    height: 100%;
+    width: 23%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar{
+    height: 95%;
+    width: 90%;
+    box-sizing: border-box;
+    border: 2px solid #41AE3C;
+    border-radius: 20px;
+    background-color: #F7FFF7;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+#sidebar > img{
+    width: 85%;
+    height: auto;
+    margin-top: 25px;
+}
+
+#buttonBox{
+    display: flex;
+    height: auto;
+    width: 85%;
+    flex-direction: column;
+    /* border: 1px blue solid; */
+    margin-top: 6vh;
+}
+
+.sideButton{
+    height: auto;
+    font-size: 1.5vw;
+    padding: 10px;
+    padding-left: 2.7vw;
+    padding-right: 2.7vw;
+    border-radius: 10px;
+    background-color: rgb(243, 243, 243);
+    margin-top: 13px;
+    border: none;
+    outline: none;
+    transition: .1s;
+}
+
+.sideButton:hover{
+    opacity: 1;
+    background-color: #41ae3c;
+    box-shadow: 0px 4px 10px 0px rgba(3, 27, 2, 0.27);
+    color: white;
+    cursor: pointer;
+}
+
+.sideButton:active{
+    transform: scale(.95);
+}
+
+#warning{
+    font-size: 1.2vw;
+    position: absolute;
+    bottom: 1vh;
+    text-align: center;
+}
+
+#warning > i {
+    width: 100%;
+    text-align: center;
+}
+/* 右边main */
+
+
+#main{
+    height: 200%;
+    width: 77%;
+    /* border: 1px red solid; */
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 20px; */
+    transform: translateY(0%);
+    transition: .5s;
+    overflow-y: hidden;
+}
+
+#mainBox,#mainBox2{
+    height: 50%;
+    width: 98%;
+    /* border: 1px blue solid; */
+    flex-direction: column;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+#report,#report2{
+    height: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #41AE3C;
+    border-radius: 20px;
+    background-color: #F7FFF7;
+    padding: 20px;
+    overflow: hidden;
+    max-height: 50%;
+}
+
+#simpleReport,#simpleReport2{
+    height: 100%;
+    width: 40%;
+    box-sizing: border-box;
+    /* border: 1px red dotted; */
+    flex-direction: column;
+}
+
+#simpleReport > div , #simpleReport2 > div{
+    margin-left: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.title{
+    font-size: 3vw;
+    font-weight: bold;
+    color: #41AE3C;
+}
+
+#detailedReport,#detailedReport2{
+    height: 100%;
+    width: 60%;
+    /* border: 1px blue dotted; */
+    flex-direction: column;
+}
+
+#detailDataOut,#detailDataOut2{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 90%;
+    height: 250px;
+    background-color: #EBF1EB;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.datasOut{
+    text-shadow: 0px 4px 10px rgba(8, 53, 6, 0.27);
+    font-size: 4vw;
+    font-weight: bold;
+    color: #41ae3c;
+}
+
+/* 下方的设置 */
+#settings,#settings2{
+    height: 48%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #41AE3C;
+    border-radius: 20px;
+    background-color: #F7FFF7;
+    padding: 20px;
+    margin-top: 2%;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding-left: 30px;
+}
+
+#settings>div{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.mdButtonsBox{
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.mdButton2,.mdButton{
+    margin-right: 10px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    font-size: 2vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #ffffff00;
+    box-sizing: border-box;
+    border: 1px solid #41AE3C;
+    border-radius: 10px;
+    color: #41AE3C;
+    font-weight: bold;
+    transition: .1s;
+}
+
+.mdButton:hover,.mdButton2:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.mdButton:active,.mdButton2:active{
+    background-color: #41AE3C;
+    color: white;
+}
+
+#recyleTimes{
+    flex-direction: column;
+}
+
+.recyleTimesInput{
+    height: 30px;
+    background-color: #ebf1eb00;
+    border: 1px solid #41AE3C;
+    padding: 5px;
+    width: 20%;
+    outline: none;
+    transition: .1s;
+    border-radius: 10px;
+    font-size: 28px;
+    color:#41AE3C;
+}
+
+.recyleTimesInput:hover{
+    background-color: white;
+}
+
+.recyleTimesInput:focus{
+    background-color: white;
+    border-bottom: 3px #41AE3C solid;
+}
+
+#recyleTimes > div{
+    margin-top: 5px;
+}
+
+#recyleTimes > input{
+    margin-top: 5px;
+}
+
+.startProgram{
+    font-size: 1vw;
+    height: 40px;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: #41AE3C;
+    color: white;
+    border-radius: 10px;
+    transition: .1s;
+}
+
+.startProgram:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.startProgram:active{
+    transform: scale(.95);
+}
+
+#settings > img{
+    height: auto;
+    width: 40%;
+    position: absolute;
+    right: 20px;
+    bottom: -30%;
+}
+
+
+/* 第二个框（自由组合） */
+#mainBox2{
+    height: 50%;
+    width: 98%;
+    /* border: 1px blue solid; */
+    flex-direction: column;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* 自由组合定律 */
+
+#freeDetailOutput{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.showTypes{
+    height: auto;
+    width: auto;
+    padding: 3px;
+    background-color: #41AE3C;
+    color: white;
+    font-size: 1.5vw;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.inFreeSettings{
+    height: 100%;
+    /* border: 1px green solid; */
+    flex-direction: column;
+}
+
+.freeButtons{
+    border: 1px #41AE3C solid;
+    border-radius: 5px;
+    font-size: 1.7vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 5px;
+    background-color: #ebf1eb00;
+    color:#41AE3C;
+    font-weight: bold;
+}
+
+.freeButtons:hover{
+    background-color: #41ae3c;
+    color: white;
+    cursor: pointer;
+}
+
+.freeButtons:active{
+    transform: scale(.95);
+}
+
+.showFreeDM{
+    font-size: 2.5vw;
+    font-weight: bold;
+    color:#41AE3C
+}
+
+#setTimes2{
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+#setTimes2 > div{
+    margin-top: 10px;
+}
+
+#InputTwo{
+    width: 40%;
+}

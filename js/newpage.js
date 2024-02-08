@@ -11,6 +11,7 @@ function openpage(num){
     "./oncalendar/index.html",
     "./onwoodfish/index.html",
     "./about.html",
+    "./peans/javascript/index.html",
   ]
   window.open(hrefList[num]);
 }
