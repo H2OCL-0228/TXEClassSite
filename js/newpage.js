@@ -9,7 +9,7 @@ function openpage(num){
     "./showscreen.html",
     "./toupiao.html",
     "./oncalendar/index.html",
-    "./onwoodfish/index.html",
+    "./onwoodfish/index.html",//已删除
     "./about.html",
     "./peans/javascript/index.html",
   ]
