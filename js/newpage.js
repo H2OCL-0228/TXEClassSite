@@ -12,6 +12,7 @@ function openpage(num){
     "./onwoodfish/index.html",//已删除
     "./about.html",
     "./peans/javascript/index.html",
+    "./timescreen/index.html",
   ]
   window.open(hrefList[num]);
 }

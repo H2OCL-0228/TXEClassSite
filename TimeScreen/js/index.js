@@ -127,5 +127,7 @@ function getCurrentDate(){
     const day = String(now.getDate()).padStart(2, '0'); // 获取当前月份的日期，并使用padStart确保它是两位数  
   
     // 将年、月、日组合成“年-月-日”的格式  
-    return `${year}年${month}月${day}日;`;
+    document.getElementById("date").innerHTML = `${year}年${month}月${day}日`;
 } 
+
+getCurrentDate()
