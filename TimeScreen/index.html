@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+<body onload="setBingBg();">
+    <!-- background picture -->
+    <!-- <div id="bg"></div> -->
+
+    <!-- background cover -->
+    <div id="cover"></div>
+    
+    <!-- main elements -->
+    <div id="main">
+        <div class="inMainBar" id = "countDown"></div>
+        <div class="inMainBar" id = "timeAndDate">
+            <div class="ininMainBar" id = "time"></div>
+            <div class="ininMainBar" id = "date">2024年8月3日</div>
+        </div>
+        <div class="inMainBar" id = "poetry"></div>
+    </div>
+
+    <!-- settings -->
+    <div id="settingsCover">
+        <div id="settings">
+            <div id="setTitle">
+                <p>时钟设置</p>
+                <div id="closeSetting" onclick="closeSetting()">×</div>
+            </div>
+            <div id="setMain">
+
+                <div class="setCard" id = "bgAlphaBar">
+                    <p>背景蒙版透明度</p>
+                    <div style = "height: 100%; align-items: center;">
+                        <input type="" class="settingInput" id = "bgAlpha" />
+                        <button class="settingButton" id = "bgAlphaButt" onclick="changeBgAlpha()">确定</button>
+                    </div>
+               </div>
+
+               <div class="setCard"  id = "examYearBar">
+                    <p>高考年份</p>
+                    <div style = "height: 100%; align-items: center;">
+                        <input type="" class="settingInput" id = "examYear" />
+                        <button class="settingButton" id = "examYearButt" onclick="changeExamYear()">确定</button>
+                    </div>
+                </div>
+
+                <div class="setCard"  id = "partOpen">
+                    <p>板块开启</p>
+                    <div style ="width: 100%;flex: 1">
+                        <div class="partCard">
+                            <p>高考倒计时</p>
+                            <div class="container">
+                                <input type="checkbox" class="checkbox" id="checkbox1" onclick="partOpen(0)" checked >
+                                <label class="switch" for="checkbox1">
+                                  <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="partCard">
+                            <p>时钟</p>
+                            <div class="container">
+                                <input type="checkbox" class="checkbox" id="checkbox2" onclick="partOpen(1)" checked>
+                                <label class="switch" for="checkbox2">
+                                  <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="partCard">
+                            <p>诗词</p>
+                            <div class="container">
+                                <input type="checkbox" class="checkbox" id="checkbox3" onclick="partOpen(2)" checked>
+                                <label class="switch" for="checkbox3">
+                                  <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setCard"  id = "background">
+                    <p>背景偏好</p>
+                    <div style = "height: 100%; align-items: center;">
+                        <button class="settingButton" id = "backgroundButt" onclick="setBingBg()">Bing</button>
+                        <button class="settingButton" id = "backgroundButt" onclick="setYiJuan()">一卷</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="footerButton" id = "startSettings" onclick="openSetting()">
+            <img src="./sucai/settings.svg" alt="img/svg">
+        </div>
+        <div class="footerButton" id = "fullScreen" onclick="handleFullScreen()">
+            <img src="./sucai/quanping.svg" alt="img/svg">
+        </div>
+        <div class="footerButton" id = "disFullScreen" onclick="fixerEFS(),exitFullscreen()">
+            <img src="./sucai/quanping.svg" alt="img/svg">
+        </div>
+    </div>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/settings.js"></script>
+    <script src="https://exam.thisis.host/js/gallery.js"></script>
+    <script src="./js/fullScreen.js"></script>
+</body>
+</html>

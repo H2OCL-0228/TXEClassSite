@@ -1,0 +1,325 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    background-size: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+p{
+    margin: 0;
+}
+
+:root{
+    --mainColor: #FF5050;
+    --coverAlpha: 0.3;
+}
+
+div{
+    display: flex;
+}
+
+/* #bg{
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../sucai/th.jpg);
+    background-image: url(https://bing.shangzhenyang.com/api/1080p);
+} */
+
+#cover{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, var(--coverAlpha));
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inMainBar{
+    margin: 10px;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(190, 190, 190, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(3px); /* 应用毛玻璃效果 */
+    transition: .3s;
+}
+
+.inMainBar:hover{
+    cursor: pointer;
+    backdrop-filter: none;
+    background-color: rgba(190, 190, 190, 0.3);
+}
+
+/* .inMainBar::after{
+    height: 100%;
+    width: 100%;
+    filter: blur(8px);
+} */
+
+#ininMainBar{
+    height: auto;
+}
+
+#time{
+    margin-top: 10px;
+    height: 170px;
+    font-size: 8vw;
+    font-weight: bold;
+    align-items: center;
+}
+#date{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#countDown,#poetry{
+    height: 70px;
+}
+
+#countDown{
+    font-size: 2vw;
+}
+
+#poetry{
+    padding: 10px;
+    font-size: 1.3vw;
+}
+
+#settingsCover{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.726);
+}
+
+#settings{
+    height: 90%;
+    width: 25%;
+    min-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 20px;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    left: -50%;
+    transition: .5s;
+}
+
+#setTitle{
+    position: relative;
+    width: 100%;
+    border-bottom: 1px rgb(207, 186, 186) solid;
+    align-items: center;
+    height: 80px;
+    justify-content: center;
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--mainColor);
+    font-weight: bold;
+}
+
+#closeSetting{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+#setMain{
+    width: 90%;
+    flex: 1;
+    /* border: 1px blue solid; */
+    flex-direction: column;
+}
+
+.setCard{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 70px;
+    background-color: #FFFFFF;
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16); */
+    align-items: center;
+    font-size: 20px;
+    justify-content: space-between;
+    border:2px #ffc4c4 solid;
+}
+
+.settingInput{
+    border: none;
+    border-radius: 10px;
+    outline:none;
+    background-color: #e7e7e791;
+    width: 60px;
+    height: 70%;
+    text-align: center;
+}
+
+.settingButton{
+    width: 60px;
+    height: 70%;
+    background-color: var(--mainColor);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.settingButton:hover{
+    border:2px #ffd6d6 solid;
+}
+
+.settingButton:active{
+    transform: scale(.9);
+}
+
+#partOpen{
+    height: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.partCard{
+    width: 95%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    margin: 5px;
+    border: 1px #ffd6d6 solid;
+    border-radius: 5px;
+    align-items: center;
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+#partOpen > div{
+    padding-top: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* checkbox */
+/* The switch - the box around the slider */
+.container {
+    width: 35px;
+    height: 20px;
+    position: relative;
+}
+
+/* Hide default HTML checkbox */
+.checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.switch {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #e9e9eb;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+/* The slider */
+.slider {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: calc(50% - 18px/2 - 8px);
+    top: calc(50% - 18px/2);
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.checkbox:checked+.switch {
+    background-color: #FF5050;
+}
+
+.checkbox:checked+.switch .slider {
+    left: calc(50% - 18px/2 + 8px);
+    top: calc(50% - 18px/2);
+}
+
+#footer {
+    width: 100%;
+    height: 60px;
+    /* border: 1px red solid; */
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 3;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.footerButton{
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    border: 2px white solid;
+    background-color: rgba(255, 255, 255, 0.301);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.footerButton > img {
+    height: 70%;
+    width: auto;
+}
+
+.footerButton:hover{
+    background-color: #FF5050;
+    border: none;
+}
+
+.footerButton:active{
+    transform: scale(.9);
+}
+
+.inMainBar{
+    flex-direction: column;
+}
