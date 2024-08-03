@@ -29,7 +29,7 @@ let openedPart = [ 1 , 1 , 1 ];
 
 function partOpen( which ){
 
-    let partIds = ["countDown","time","poetry"];
+    let partIds = ["countDown","timeAndDate","poetry"];
     if ( openedPart[which] === 1 ){
         document.getElementById(partIds[which]).style.display = "none";
         openedPart[which] = 0;
